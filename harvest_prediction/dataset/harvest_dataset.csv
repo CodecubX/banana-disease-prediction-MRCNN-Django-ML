@@ -1,0 +1,16 @@
+Plant ID,Variety,Agro-climatic region,Plant density,Spacing between plants (m),Plant generation,Fertilizer type,Soil pH,Amount of sunlight received,Watering schedule,Number of days for flower initiation,Number of leaves,Number of banana combs,Number of bananas in one comb,Height (m),Yield per plant (kg)
+1,Cavendish,Wet Zone,4,2.0,2,Organic,6.5,Moderate,Twice a week,275,15,5,150,2.5,40.5
+2,Williams,Intermediate Zone,3,1.5,3,Chemical,6.8,High,Daily,300,12,4,120,2.0,50.2
+3,Lady Finger,Dry Zone,1,2.5,1,Organic,6.2,Low,Once a week,285,18,3,90,3.0,35.7
+4,Robusta,Wet Zone,5,2.0,4,Chemical,6.5,High,Twice a week,280,16,6,180,2.5,60.8
+5,Gros Michel,Intermediate Zone,2,1.2,1,Organic,6.0,Moderate,Daily,290,14,4,120,2.2,42.3
+6,Dwarf Cavendish,Dry Zone,3,2.5,3,Chemical,6.8,Low,Once a week,265,20,5,150,2.8,55.6
+7,Cavendish,Wet Zone,4,2.0,2,Chemical,6.5,Moderate,Daily,280,14,4,120,2.2,48.9
+8,Williams,Intermediate Zone,3,1.5,3,Organic,6.8,High,Twice a week,290,16,5,150,2.5,55.3
+9,Lady Finger,Dry Zone,1,2.5,1,Chemical,6.2,Low,Once a week,275,19,4,120,2.8,40.1
+10,Robusta,Wet Zone,5,2.0,4,Organic,6.5,Moderate,Daily,295,15,6,180,2.0,58.2
+11,Gros Michel,Intermediate Zone,2,1.2,1,Chemical,6.0,High,Twice a week,300,13,3,90,3.2,47.6
+12,Dwarf Cavendish,Dry Zone,3,2.5,3,Organic,6.8,Low,Once a week,270,21,5,150,2.5,63.2
+13,Cavendish,Wet Zone,4,2.0,2,Chemical,6.5,Moderate,Daily,285,13,3,90,3.0,43.8
+14,Williams,Intermediate Zone,3,1.5,3,Organic,6.8,High,Twice a week,295,17,4,120,2.2,52.9
+15,Lady Finger,Dry Zone,1,2.5,1,Chemical,6.2,Low,Once a week,280,20,3,90,2
