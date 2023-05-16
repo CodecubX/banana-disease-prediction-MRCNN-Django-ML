@@ -1,0 +1,101 @@
+Temperature,Rainfall,Humidity,Wind Speed,Soil Moisture,Growth Stage,Irrigation Method,Soil Type,Crop Density,Water Source,Slope,Watering Plan
+32,2,70,10,80,ripening,sprinkler,Peat Soil,3000,pond,none,every day
+26,3,50,6,40,reproductive,sprinkler,Peat Soil,2500,pond,none,once a week
+28,4,90,5,20,reproductive,sprinkler,Yellow Soil,3500,river,medium,once every 1-2 days
+30,2,80,1,100,ripening,sprinkler,Laterite Soil,2500,well,low,once a week
+24,6,50,9,40,ripening,drip,Yellow Soil,2000,river,medium,once every 3-4 days
+30,0,90,8,40,reproductive,drip,Black Soil,2000,river,medium,once every 3-4 days
+32,0,40,5,50,vegetative,sprinkler,Cinder Soil,2500,pond,high,once every 3-4 days
+24,3,60,6,100,vegetative,drip,Laterite Soil,4000,river,none,once every 1-2 days
+31,10,70,4,90,reproductive,sprinkler,Yellow Soil,4000,river,high,once a week
+31,5,70,1,40,vegetative,sprinkler,Cinder Soil,2000,well,medium,every day
+28,9,60,5,80,vegetative,sprinkler,Cinder Soil,4000,pond,none,once every 3-4 days
+32,5,90,3,30,ripening,sprinkler,Black Soil,2500,river,none,every day
+26,9,50,2,100,vegetative,sprinkler,Peat Soil,3500,well,low,once a week
+29,1,40,1,100,reproductive,sprinkler,Peat Soil,2000,well,none,every day
+31,4,80,1,90,vegetative,drip,Yellow Soil,3500,well,high,every day
+28,1,50,7,60,vegetative,sprinkler,Peat Soil,3500,well,high,once every 1-2 days
+32,5,70,7,60,reproductive,drip,Laterite Soil,3000,river,medium,every day
+28,8,60,3,50,ripening,drip,Black Soil,3000,well,high,once every 1-2 days
+25,0,80,0,30,vegetative,drip,Cinder Soil,2000,river,medium,once every 1-2 days
+28,10,40,4,30,ripening,drip,Yellow Soil,3000,river,high,once a week
+29,6,40,7,90,reproductive,drip,Black Soil,3500,river,none,once a week
+28,2,50,0,20,vegetative,sprinkler,Yellow Soil,3500,well,none,once every 3-4 days
+31,8,50,4,90,ripening,drip,Laterite Soil,2500,river,low,once a week
+26,9,40,0,50,reproductive,sprinkler,Laterite Soil,4000,river,none,once every 3-4 days
+30,8,40,3,30,reproductive,drip,Yellow Soil,2000,pond,medium,once every 3-4 days
+28,1,50,2,70,vegetative,sprinkler,Black Soil,3500,pond,high,every day
+31,8,60,9,100,vegetative,sprinkler,Black Soil,4000,pond,medium,once a week
+32,1,90,9,60,ripening,drip,Black Soil,3500,well,medium,once every 3-4 days
+24,9,50,7,100,vegetative,sprinkler,Cinder Soil,3500,pond,none,once every 1-2 days
+32,10,70,4,80,reproductive,drip,Black Soil,2500,river,none,once every 3-4 days
+25,7,80,2,50,reproductive,drip,Black Soil,2000,well,none,every day
+26,8,60,7,50,vegetative,sprinkler,Laterite Soil,3000,river,medium,once every 3-4 days
+24,6,70,8,40,reproductive,drip,Peat Soil,2000,well,high,once every 1-2 days
+29,1,70,8,90,reproductive,sprinkler,Cinder Soil,4000,river,high,once every 1-2 days
+28,5,80,2,100,ripening,sprinkler,Laterite Soil,2000,well,high,every day
+28,1,90,9,80,ripening,sprinkler,Black Soil,3000,river,none,once every 1-2 days
+29,6,90,0,30,vegetative,drip,Peat Soil,4000,pond,none,every day
+27,0,70,2,20,ripening,drip,Peat Soil,4000,pond,medium,once every 3-4 days
+26,5,70,5,30,reproductive,sprinkler,Laterite Soil,3500,river,high,once every 1-2 days
+27,0,70,7,80,vegetative,drip,Laterite Soil,2000,well,high,every day
+25,3,60,6,60,vegetative,drip,Yellow Soil,3000,well,high,once a week
+30,0,50,8,80,reproductive,sprinkler,Cinder Soil,4000,pond,none,once every 3-4 days
+29,8,80,2,30,reproductive,drip,Cinder Soil,2000,pond,low,once a week
+28,6,60,8,30,ripening,drip,Peat Soil,3500,well,medium,every day
+29,10,80,0,70,ripening,drip,Cinder Soil,4000,pond,high,once every 1-2 days
+30,4,90,7,20,ripening,drip,Yellow Soil,4000,river,medium,once a week
+25,8,70,0,20,reproductive,sprinkler,Peat Soil,2000,river,medium,once a week
+25,5,70,9,20,vegetative,sprinkler,Peat Soil,4000,river,low,once every 1-2 days
+32,2,40,4,60,ripening,drip,Black Soil,4000,pond,none,every day
+31,10,90,0,90,vegetative,drip,Laterite Soil,3000,well,high,once every 1-2 days
+25,7,40,5,100,vegetative,sprinkler,Yellow Soil,3000,pond,high,once a week
+29,7,60,5,80,ripening,drip,Peat Soil,3500,river,medium,every day
+32,7,40,1,60,vegetative,sprinkler,Laterite Soil,4000,well,high,once every 3-4 days
+27,4,80,9,50,reproductive,sprinkler,Peat Soil,2000,well,low,once a week
+27,4,70,5,60,vegetative,sprinkler,Peat Soil,2500,well,low,once a week
+31,5,60,8,70,vegetative,sprinkler,Yellow Soil,2000,river,high,every day
+25,8,70,3,50,ripening,sprinkler,Black Soil,3500,river,low,once every 3-4 days
+32,7,40,6,40,reproductive,drip,Peat Soil,4000,pond,none,once every 3-4 days
+30,5,70,2,20,vegetative,drip,Black Soil,2500,pond,high,once every 1-2 days
+27,6,60,9,80,ripening,sprinkler,Laterite Soil,4000,well,none,every day
+32,6,40,9,40,reproductive,drip,Cinder Soil,2000,river,high,every day
+30,6,50,6,100,vegetative,drip,Peat Soil,3000,well,none,once every 1-2 days
+24,7,60,1,40,vegetative,drip,Black Soil,2500,pond,medium,once every 1-2 days
+28,6,50,7,30,vegetative,drip,Cinder Soil,3000,river,medium,every day
+30,4,40,8,70,reproductive,drip,Cinder Soil,4000,well,medium,every day
+31,1,60,0,70,vegetative,sprinkler,Peat Soil,3000,river,high,once every 1-2 days
+31,4,60,5,90,ripening,drip,Peat Soil,2000,river,none,once every 3-4 days
+25,0,90,8,30,ripening,drip,Black Soil,3500,river,low,every day
+25,9,90,7,90,reproductive,sprinkler,Yellow Soil,3500,pond,high,once every 3-4 days
+25,9,70,7,30,reproductive,sprinkler,Laterite Soil,3500,well,none,once every 3-4 days
+32,3,40,3,70,vegetative,sprinkler,Cinder Soil,4000,river,high,once every 1-2 days
+30,9,60,9,30,vegetative,sprinkler,Laterite Soil,3500,pond,none,once every 3-4 days
+30,1,90,7,30,vegetative,drip,Yellow Soil,3500,pond,none,every day
+25,4,70,7,100,vegetative,drip,Peat Soil,3500,river,high,once a week
+31,3,50,9,100,vegetative,sprinkler,Laterite Soil,3000,river,medium,once a week
+28,9,50,9,60,vegetative,drip,Peat Soil,2000,river,medium,once a week
+27,10,80,0,90,ripening,drip,Laterite Soil,3500,pond,high,once every 1-2 days
+32,8,70,2,40,vegetative,sprinkler,Black Soil,2500,well,high,once every 3-4 days
+30,6,70,1,30,reproductive,drip,Black Soil,3500,river,high,once a week
+25,7,80,3,60,vegetative,drip,Cinder Soil,3500,river,low,once a week
+27,6,80,5,30,reproductive,drip,Black Soil,2500,river,medium,every day
+24,7,40,6,90,reproductive,drip,Laterite Soil,3500,pond,high,every day
+30,10,80,2,30,reproductive,sprinkler,Peat Soil,2500,pond,low,once every 3-4 days
+24,7,60,5,60,reproductive,drip,Laterite Soil,2000,well,low,once every 1-2 days
+30,1,80,0,20,vegetative,drip,Peat Soil,3500,well,low,once every 3-4 days
+26,0,60,6,60,ripening,sprinkler,Laterite Soil,2500,well,none,once a week
+27,6,90,9,30,reproductive,drip,Black Soil,2000,well,high,once every 3-4 days
+30,8,70,8,20,ripening,drip,Peat Soil,3500,pond,none,every day
+32,3,50,9,20,reproductive,drip,Laterite Soil,2000,well,none,once every 3-4 days
+25,9,40,1,90,vegetative,sprinkler,Cinder Soil,3500,pond,medium,once every 3-4 days
+25,3,90,0,100,reproductive,sprinkler,Laterite Soil,4000,river,medium,every day
+26,9,90,7,30,vegetative,drip,Yellow Soil,3000,river,low,every day
+28,8,50,9,40,vegetative,sprinkler,Peat Soil,2500,well,medium,every day
+30,0,80,5,100,vegetative,drip,Laterite Soil,4000,well,high,once every 3-4 days
+30,10,80,3,80,ripening,sprinkler,Laterite Soil,4000,river,medium,once every 1-2 days
+25,6,40,2,100,ripening,drip,Laterite Soil,4000,pond,none,once a week
+25,8,60,5,50,reproductive,drip,Peat Soil,4000,pond,medium,once every 1-2 days
+30,9,50,3,90,vegetative,drip,Cinder Soil,2500,pond,low,once every 3-4 days
+32,9,80,7,20,ripening,drip,Black Soil,3500,river,none,once every 3-4 days
+26,5,40,10,90,vegetative,sprinkler,Yellow Soil,2000,pond,low,every day
