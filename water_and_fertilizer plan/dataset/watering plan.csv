@@ -1,0 +1,41 @@
+pH,organic_matter_content,soil_type,soil_moisture,avg_temperature,avg_rainfall,plant_height,leaf_color,stem_diameter,plant_density,soil_texture,soil_color,temperature,humidity,rainfall,water_source,irrigation_method,fertilizer_used_last_season,crop_rotation,pest_disease_infestation,slope,watering_plan
+6.2,low,Cinder Soil,25,28,100,50,Green,10,100,Loamy,Red,30,70,200,Rainwater harvesting,Drip,organic,yes,no,medium,every day
+6.8,moderate,Laterite Soil,40,25,150,75,Green,15,150,Clayey,Brown,25,80,250,River,Sprinkler,organic,no,yes,low,once every 2-3 days
+5.5,high,Yellow Soil,30,30,200,80,Yellow,12,200,Sandy,Yellow,28,75,300,Municipal supply,Drip,inorganic,yes,yes,none,once every 3-4 days
+6.5,low,Black Soil,20,26,120,60,Green,8,120,Clayey,Dark,26,65,150,Well,Flood,organic,yes,no,high,every day
+5.8,moderate,Peat Soil,35,28,180,70,Green,14,180,Loamy,Red,27,85,200,Rainwater harvesting,Drip,inorganic,no,yes,low,once every 2-3 days
+6.9,high,Laterite Soil,40,25,150,75,Green,15,150,Sandy,Black,24,90,250,River,Sprinkler,organic,yes,yes,medium,once every 3-4 days
+5.6,low,Black Soil,25,27,100,45,Yellow,7,90,Clayey,Dark,25,70,200,Canal,Sprinkler,organic,no,no,medium,once every 2-3 days
+6.1,moderate,Cinder Soil,30,29,130,55,Green,9,110,Loamy,Red,29,75,180,Rainwater harvesting,Flood,inorganic,no,no,none,every day
+6.4,high,Laterite Soil,35,26,160,65,Yellow,11,130,Sandy,Yellow,26,80,220,Municipal supply,Drip,organic,yes,no,low,once every 3-4 days
+5.7,low,Black Soil,22,25,110,40,Green,6,80,Clayey,Dark,27,60,150,Well,Drip,inorganic,yes,no,high,once every 2-3 days
+6.3,moderate,Peat Soil,38,27,190,72,Green,13,170,Loamy,Red,25,85,230,Rainwater harvesting,Flood,organic,yes,yes,medium,every day
+5.9,high,Yellow Soil,28,30,140,60,Yellow,10,120,Sandy,Black,24,75,180,Rainwater harvesting,Drip,organic,no,no,low,once every 3-4 days
+6.7,low,Black Soil,24,28,120,48,Green,8,100,Clayey,Dark,28,65,160,River,Sprinkler,inorganic,yes,no,none,every day
+5.3,moderate,Cinder Soil,32,26,170,60,Green,9,120,Loamy,Red,27,80,200,Rainwater harvesting,Drip,organic,yes,yes,medium,once every 2-3 days
+6.6,high,Laterite Soil,37,25,160,70,Green,15,160,Sandy,Yellow,25,85,210,Municipal supply,Flood,inorganic,no,no,high,once every 3-4 days
+5.4,low,Black Soil,23,27,100,42,Yellow,7,90,Clayey,Dark,26,60,150,Well,Drip,inorganic,no,yes,low,every day
+6.0,moderate,Peat Soil,36,28,180,68,Green,13,160,Loamy,Red,26,75,220,Canal,Sprinkler,organic,no,no,medium,once every 2-3 days
+6.8,high,Yellow Soil,31,29,150,78,Yellow,12,190,Sandy,Black,24,80,240,Rainwater harvesting,Flood,organic,yes,no,none,every day
+5.7,low,Black Soil,24,26,110,50,Green,8,110,Clayey,Dark,27,65,160,Municipal supply,Drip,organic,yes,no,high,once every 3-4 days
+6.3,moderate,Cinder Soil,34,27,160,68,Green,10,140,Loamy,Red,26,80,190,Rainwater harvesting,Flood,inorganic,no,yes,none,every day
+5.9,high,Laterite Soil,29,25,140,62,Yellow,9,130,Sandy,Yellow,24,75,220,Well,Drip,organic,yes,yes,low,once every 2-3 days
+6.2,low,Black Soil,21,28,100,38,Green,6,70,Clayey,Dark,25,60,140,River,Sprinkler,organic,no,no,medium,every day
+6.4,moderate,Peat Soil,39,26,190,75,Green,14,190,Loamy,Red,28,85,230,Rainwater harvesting,Flood,organic,no,yes,high,once every 3-4 days
+5.6,high,Yellow Soil,26,30,130,55,Green,10,100,Sandy,Black,23,70,200,Municipal supply,Drip,inorganic,yes,no,low,once every 2-3 days
+6.7,low,Black Soil,23,27,110,40,Yellow,7,90,Clayey,Dark,26,65,160,Canal,Sprinkler,organic,yes,no,none,every day
+5.8,moderate,Cinder Soil,33,28,170,62,Green,9,120,Loamy,Red,28,75,180,Well,Flood,organic,yes,yes,medium,once every 3-4 days
+6.5,high,Laterite Soil,36,25,160,70,Green,15,160,Sandy,Yellow,24,80,210,Rainwater harvesting,Drip,inorganic,no,no,high,once every 3-4 days
+5.5,low,Black Soil,22,26,100,45,Yellow,7,90,Clayey,Dark,27,60,150,River,Sprinkler,inorganic,no,yes,low,every day
+6.1,moderate,Peat Soil,37,27,180,68,Green,13,160,Loamy,Red,26,85,220,Municipal supply,Flood,organic,yes,no,medium,once every 2-3 days
+6.9,high,Yellow Soil,32,29,150,78,Yellow,12,190,Sandy,Black,25,80,240,Rainwater harvesting,Drip,organic,no,no,none,every day
+5.7,low,Black Soil,24,27,110,50,Green,8,110,Clayey,Dark,27,65,160,Municipal supply,Drip,organic,yes,no,high,once every 3-4 days
+6.3,moderate,Cinder Soil,34,28,160,68,Green,10,140,Loamy,Red,26,80,190,Rainwater harvesting,Flood,inorganic,no,yes,none,every day
+5.9,high,Laterite Soil,29,26,140,62,Yellow,9,130,Sandy,Yellow,24,75,220,Well,Drip,organic,yes,no,low,once every 2-3 days
+6.2,low,Black Soil,21,28,100,38,Green,6,70,Clayey,Dark,25,60,140,River,Sprinkler,organic,no,no,medium,every day
+6.4,moderate,Peat Soil,39,27,190,75,Green,14,190,Loamy,Red,28,85,230,Rainwater harvesting,Flood,organic,no,yes,high,once every 3-4 days
+5.6,high,Yellow Soil,26,30,130,55,Green,10,100,Sandy,Black,23,70,200,Municipal supply,Drip,inorganic,yes,no,low,once every 2-3 days
+6.7,low,Black Soil,23,27,110,40,Yellow,7,90,Clayey,Dark,26,65,160,Canal,Sprinkler,organic,yes,no,none,every day
+5.8,moderate,Cinder Soil,33,28,170,62,Green,9,120,Loamy,Red,28,75,180,Well,Flood,organic,yes,yes,medium,once every 3-4 days
+6.5,high,Laterite Soil,36,25,160,70,Green,15,160,Sandy,Yellow,24,80,210,Rainwater harvesting,Drip,inorganic,no,no,high,once every 3-4 days
+5.5,low,Black Soil,22,26,100,45,Yellow,7,90,Clayey,Dark,27,60,150,River,Sprinkler,inorganic,no,yes,low,every day

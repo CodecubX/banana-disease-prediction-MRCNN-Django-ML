@@ -1,0 +1,8 @@
+pH,organic_matter_content,soil_type,soil_moisture,avg_temperature,avg_rainfall,plant_height,leaf_color,stem_diameter,plant_density,soil_texture,soil_color,temperature,humidity,rainfall,water_source,irrigation_method,fertilizer_used_last_season,crop_rotation,pest_disease_infestation,slope,fertilizer_type,fertilizer_plan
+6.2,low,Cinder Soil,25,28,100,50,Green,10,100,Loamy,Red,30,70,200,Rainwater harvesting,Drip,organic,yes,no,medium,inorganic,50g/plant applied after 30 days of sowing
+6.8,moderate,Laterite Soil,40,25,150,75,Green,15,150,Clayey,Brown,25,80,250,River,Sprinkler,organic,no,yes,low,organic,75g/plant applied after 45 days of sowing
+5.5,high,Yellow Soil,30,30,200,80,Yellow,12,200,Sandy,Yellow,28,75,300,Municipal supply,Drip,inorganic,yes,yes,none,inorganic,100g/plant applied after 60 days of sowing
+6.5,low,Black Soil,20,26,120,60,Green,8,120,Clayey,Dark,26,65,150,Well,Flood,organic,yes,no,high,inorganic,60g/plant applied after 30 days of sowing
+5.8,moderate,Peat Soil,35,28,180,70,Green,14,180,Loamy,Red,27,85,200,Rainwater harvesting,Drip,inorganic,no,yes,low,organic,80g/plant applied after 45 days of sowing
+6.9,high,Laterite Soil,40,25,150,75,Green,15,150,Sandy,Black,24,90,250,River,Sprinkler,organic,yes,yes,medium,organic,100g/plant applied after 60 days of sowing
+5.6,low,Black Soil,25,27,100,45,Yellow,7,90,Clayey,Dark,

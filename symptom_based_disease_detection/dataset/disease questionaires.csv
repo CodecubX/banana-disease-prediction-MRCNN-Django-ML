@@ -1,0 +1,16 @@
+Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
+Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
+Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
+Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
+Brown,Brown,No,Yes,Slow Growth,Red,No,Distorted,Caterpillars,Black Sigatoka
+Yellow,None,Yes,No,Slow Growth,Green,No,Normal,None,Nitrogen Deficiency
+Brown,Brown,No,No,Normal,Yellow,Yes,Normal,Aphids,Banana Mosaic
+Pale Green,None,No,No,Normal,Brown,No,Normal,None,Magnesium Deficiency
+Brown,Black,No,No,Slow Growth,Green,No,Normal,None,Bacterial Wilt
+Yellow,None,Yes,Yes,Slow Growth,Red,No,Distorted,Aphids,Yellow Sigatoka
+Brown,Brown,No,No,Normal,Black,No,Normal,None,Zinc Deficiency
+Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Phosphorus Deficiency
+Brown,Black,No,No,Slow Growth,Green,Yes,Distorted,Mites,Banana Streak Virus
+Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
+Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
+Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
