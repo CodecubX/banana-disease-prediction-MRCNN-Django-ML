@@ -4,5 +4,5 @@
 disease_detection_mrcnn/mask_rcnn_coco.h5
 disease_detection_mrcnn/logs/
 disease_detection_mrcnn/mrcnn/__pycache__/
-
-
+/backend/.env
+/backend/db.sqlite3
