@@ -5,5 +5,5 @@ app_name = 'api'
 
 urlpatterns = [
    path('profile/create', CreateAccount.as_view(), name="create_user"),
-   path('profile/', CurrentUser.as_view(), name="profile"),
+   path('profile', CurrentUser.as_view(), name="profile"),
 ]

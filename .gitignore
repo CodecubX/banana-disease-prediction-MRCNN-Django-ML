@@ -6,3 +6,4 @@ disease_detection_mrcnn/logs/
 disease_detection_mrcnn/mrcnn/__pycache__/
 /backend/.env
 /backend/db.sqlite3
+/backend/media/
