@@ -3,20 +3,19 @@ import requests
 from django.contrib.auth import get_user_model
 from django.conf import settings
 from rest_framework.views import APIView
-from rest_framework import status, generics
+from rest_framework import status
 from rest_framework.response import Response
 
 from rest_framework import permissions
 
-from oauth2_provider.models import Application
-
-from api.serializers import UserSerializer
-from api.serializers import RegistrationSerializer
+from api.serializers.user_serializer import UserSerializer
+from api.serializers.user_serializer import RegistrationSerializer
 
 User = get_user_model()
 
 
 class CreateAccount(APIView):
+    """ Handles user account creation """
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):
@@ -41,12 +40,15 @@ class CreateAccount(APIView):
 
 
 class CurrentUser(APIView):
+    """ Handle current user related operations """
     permission_classes = (permissions.IsAuthenticated,)
 
+    """ Gets the current user """
     def get(self, request):
         serializer = UserSerializer(self.request.user, context={'request': request})
         return Response(serializer.data)
 
+    """ Updated current user """
     def patch(self, request, *args, **kwargs):
         serializer = UserSerializer(
             self.request.user,
