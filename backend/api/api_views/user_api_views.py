@@ -5,12 +5,13 @@ from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework import status, generics
 from rest_framework.response import Response
-from .serializers import RegistrationSerializer
+
 from rest_framework import permissions
 
 from oauth2_provider.models import Application
 
-from .serializers import UserSerializer
+from api.serializers import UserSerializer
+from api.serializers import RegistrationSerializer
 
 User = get_user_model()
 
