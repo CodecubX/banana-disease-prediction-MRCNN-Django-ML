@@ -43,5 +43,8 @@ class CurrentUser(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request):
-        serializer = UserSerializer(self.request.user)
+        serializer = UserSerializer(self.request.user, context={'request': request})
         return Response(serializer.data)
+
+    def patch(self, request, *args, **kwargs):
+        pass
