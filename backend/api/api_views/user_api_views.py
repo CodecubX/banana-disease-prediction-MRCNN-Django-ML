@@ -41,7 +41,8 @@ class CreateAccount(APIView):
 
 class CurrentUser(APIView):
     """ Handle current user related operations """
-    permission_classes = (permissions.IsAuthenticated,)
+
+    permission_classes = [permissions.IsAuthenticated]
 
     """ Gets the current user """
     def get(self, request):
