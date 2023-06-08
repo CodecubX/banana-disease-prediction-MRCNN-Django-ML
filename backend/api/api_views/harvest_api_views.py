@@ -6,7 +6,7 @@ from api.models.variety_model import Variety
 
 from api.serializers.harvest_practices_serializer import HarvestPracticeSerializer
 
-from api.utils import harvest_prediction
+from api.utils import harvest_prediction, calculate_harvesting_time
 
 
 class HarvestPredictionAPIView(APIView):
@@ -17,7 +17,25 @@ class HarvestPredictionAPIView(APIView):
     serializer_class = HarvestPracticeSerializer
 
     def get(self, request, *args, **kwargs):
-        pass
+        # Extract the age in days and variety from the URL params
+        variety_id = request.GET.get('variety')
+        age_in_days = int(request.GET.get('age'))
+
+        try:
+            variety_obj = Variety.objects.get(id=variety_id)
+            # Retrieve the average harvesting time from the variety model
+            average_harvesting_time = variety_obj.avg_harvesting_time
+        except Variety.DoesNotExist:
+            return Response({'error': 'Variety not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Calculate the estimated harvesting time
+        estimated_time = calculate_harvesting_time(average_harvesting_time, age_in_days)
+
+        # Return the estimated harvesting time as a response
+        response_data = {
+            'estimated_harvesting_time': estimated_time
+        }
+        return Response(response_data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
         # Extract the data from the request

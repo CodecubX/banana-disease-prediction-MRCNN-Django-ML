@@ -194,3 +194,24 @@ def get_harvest_prediction(data, classifier=CLASSIFIER_PATH,
             print(f'\t{i}: {pred_proba[i]}')
 
     return pred[0], top_k_proba
+
+
+def calculate_harvesting_time(average_harvesting_time, age_in_days):
+    """
+    Calculates the estimated harvesting time for a banana plant based on its average harvesting time and age in days.
+
+    Args:
+        average_harvesting_time (int): The average harvesting time for the banana plant in days.
+        age_in_days (int): The age of the banana plant in days.
+
+    Returns:
+        str: The estimated harvesting time or a message indicating if the plant is ready for harvesting or has passed the estimated time.
+    """
+    estimated_harvesting_time = average_harvesting_time - age_in_days
+
+    if estimated_harvesting_time > 0:
+        return f"The estimated harvesting time is in {estimated_harvesting_time} days."
+    elif estimated_harvesting_time == 0:
+        return "The plant is ready for harvesting."
+    else:
+        return "The plant has already passed the estimated harvesting time."

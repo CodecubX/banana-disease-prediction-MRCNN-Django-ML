@@ -5,6 +5,7 @@ class Variety(models.Model):
     """ Holds variety model data """
 
     variety = models.CharField(max_length=100, unique=True, null=False, blank=False)
+    avg_harvesting_time = models.IntegerField()
 
     class Meta:
         verbose_name_plural = "Varieties"
