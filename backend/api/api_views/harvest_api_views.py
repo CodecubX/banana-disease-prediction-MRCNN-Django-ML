@@ -2,6 +2,10 @@ from rest_framework import status, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
+from api.models.variety_model import Variety
+
+from api.serializers.harvest_practices_serializer import HarvestPracticeSerializer
+
 from api.utils import harvest_prediction
 
 
@@ -9,6 +13,11 @@ class HarvestPredictionAPIView(APIView):
     """ Handles Harvest Predictions related operations """
 
     permission_classes = [permissions.IsAuthenticated]
+
+    serializer_class = HarvestPracticeSerializer
+
+    def get(self, request, *args, **kwargs):
+        pass
 
     def post(self, request, *args, **kwargs):
         # Extract the data from the request
@@ -48,12 +57,19 @@ class HarvestPredictionAPIView(APIView):
             error = str(e).strip('"')
             return Response({"error": error}, status=status.HTTP_400_BAD_REQUEST)
 
+        # retrieve practices
+        variety_obj = Variety.objects.prefetch_related('harvestpractice_set').get(variety=variety)
+        practices = variety_obj.harvestpractice_set.all()
+
+        serializer = self.serializer_class(practices, many=True)
+
         # Return the prediction and probabilities as a JSON response
         response_data = {
             'prediction': prediction,
-            'probabilities': probabilities
+            'probabilities': probabilities,
+            'post_harvest_practices': serializer.data
         }
-        return Response(response_data)
+        return Response(response_data, status=status.HTTP_200_OK)
 
 
 

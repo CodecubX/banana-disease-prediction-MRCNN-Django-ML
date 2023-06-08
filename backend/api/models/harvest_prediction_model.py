@@ -1,9 +1,9 @@
 from django.db import models
 
-from api.models import VarietyModel, User
+from api.models import Variety, User
 
 
-class HarvestPredictionModel(models.Model):
+class HarvestPrediction(models.Model):
     """ Holds harvest prediction data """
 
     predicted_harvest = models.FloatField()
@@ -19,7 +19,7 @@ class HarvestPredictionModel(models.Model):
     number_of_leaves = models.IntegerField()
     height = models.FloatField()
 
-    variety = models.ForeignKey(VarietyModel, on_delete=models.DO_NOTHING, null=False, blank=False)
+    variety = models.ForeignKey(Variety, on_delete=models.DO_NOTHING, null=False, blank=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
 
     def __str__(self):

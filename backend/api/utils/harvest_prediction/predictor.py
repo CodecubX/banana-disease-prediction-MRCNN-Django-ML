@@ -12,7 +12,7 @@ SCALER_PATH = 'api/utils/harvest_prediction/helpers/harvest_data_scaler.pkl'
 def get_harvest_prediction(data, classifier=CLASSIFIER_PATH,
                            ordinal_encoder_obj=ORDINAL_ENCODER_PATH,
                            onehot_encoder_obj=ONE_HOT_ENCODER_PATH, scaler_obj=SCALER_PATH,
-                           y_encoder_obj=Y_ENCODER_PATH, verbose=False):
+                           y_encoder_obj=Y_ENCODER_PATH, top_k=3, verbose=False):
     """
     This function predicts the harvest of a banana crop based on the given input data.
     It loads the pre-trained model, encoders, and scaler using pickle and applies them on the input data to get the predictions.
@@ -35,6 +35,7 @@ def get_harvest_prediction(data, classifier=CLASSIFIER_PATH,
         onehot_encoder_obj (str): The file path of the one-hot encoder object for 'Variety', 'Agro-climatic region', and 'Fertilizer type' columns. Defaults to 'harvest_data_one_hot_encoded.pkl'.
         scaler_obj (str): The file path of the scaler object for scaling the encoded data. Defaults to 'harvest_data_scaler.pkl'.
         y_encoder_obj (str): The file path of the ordinal encoder object for the target variable 'Harvest'. Defaults to 'y_data_ordinal_encoded.pkl'.
+        top_k (int): Means return top k predictions that has more probabilities
         verbose (bool): Whether to print the predicted probabilities with encoded values. Defaults to False.
 
     Returns:
@@ -178,10 +179,18 @@ def get_harvest_prediction(data, classifier=CLASSIFIER_PATH,
     # create predictions and probabilities dict
     pred_proba = {label: format(probability, '.5f') for label, probability in zip(labels, pred_proba[0])}
 
+    # Sort the dictionary based on probabilities in descending order
+    sorted_proba = sorted(pred_proba.items(), key=lambda x: float(x[1]), reverse=True)
+
+    # Get the top k probabilities
+    top_k_proba = sorted_proba[:top_k]
+    # Create a new dictionary with the top k probabilities
+    top_k_proba = {label: probability for label, probability in top_k_proba}
+
     if verbose:
         # Print the predicted probabilities with encoded values
         print('Probabilities for each class: ')
         for i in pred_proba:
             print(f'\t{i}: {pred_proba[i]}')
 
-    return pred[0], pred_proba
+    return pred[0], top_k_proba
