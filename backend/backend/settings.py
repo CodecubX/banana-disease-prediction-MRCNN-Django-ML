@@ -162,7 +162,8 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 
 SOCIAL_AUTH_USER_FIELDS=['email', 'first_name', 'username', 'password']
 
-
+CLIENT_ID = config('CLIENT_ID')
+CLIENT_SECRET = config('CLIENT_SECRET')
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
