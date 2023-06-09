@@ -22,5 +22,9 @@ class HarvestPrediction(models.Model):
     variety = models.ForeignKey(Variety, on_delete=models.DO_NOTHING, null=False, blank=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
 
+    # fields for storing predictions and probabilities
+    harvest = models.CharField(max_length=50)
+    top_probabilities = models.JSONField()
+
     def __str__(self):
         return f'{self.variety}: {self.harvest}'
