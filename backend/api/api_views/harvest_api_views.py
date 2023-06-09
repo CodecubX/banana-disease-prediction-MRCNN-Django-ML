@@ -2,7 +2,7 @@ from rest_framework import status, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from api.models.variety_model import Variety
+from api.models import Variety, HarvestPrediction
 
 from api.serializers.harvest_practices_serializer import HarvestPracticeSerializer
 
@@ -80,6 +80,32 @@ class HarvestPredictionAPIView(APIView):
         practices = variety_obj.harvestpractice_set.all()
 
         serializer = self.serializer_class(practices, many=True)
+
+        try:
+            # Create HarvestPrediction instance
+            harvest_prediction_instance = HarvestPrediction(
+                predicted_harvest=prediction,
+                agro_climatic_region=agro_climatic_region,
+                plant_density=plant_density,
+                spacing_between_plants=spacing_between_plants,
+                pesticides_used=pesticides_used,
+                plant_generation=plant_generation,
+                fertilizer_type=fertilizer_type,
+                soil_pH=soil_ph,
+                amount_of_sunlight_received=amount_of_sunlight,
+                watering_schedule=watering_schedule,
+                number_of_leaves=number_of_leaves,
+                height=height,
+                variety=variety_obj,
+                user=request.user,
+                harvest=prediction,
+                top_probabilities=probabilities
+            )
+
+            # Save the HarvestPrediction instance to the database
+            harvest_prediction_instance.save()
+        except Exception as e:
+            print('INFO: Failed to save predictions to database')
 
         # Return the prediction and probabilities as a JSON response
         response_data = {

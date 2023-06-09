@@ -6,7 +6,7 @@ from api.models import Variety, User
 class HarvestPrediction(models.Model):
     """ Holds harvest prediction data """
 
-    predicted_harvest = models.FloatField()
+    predicted_harvest = models.CharField(max_length=20)
     agro_climatic_region = models.CharField(max_length=100)
     plant_density = models.IntegerField()
     spacing_between_plants = models.FloatField()
