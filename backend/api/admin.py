@@ -1,31 +1,42 @@
 from django.contrib import admin
 
-from api.models import user_model, test_model, variety_model, harvest_prediction_model, harvest_practice_model
+from api.models import Test, User, Variety, HarvestPractice, HarvestPrediction, Disease, Cure
 
 
 # --- for testing ---
-@admin.register(test_model.Test)
+@admin.register(Test)
 class TestAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(user_model.User)
+@admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(variety_model.Variety)
+@admin.register(Variety)
 class VarietyAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(harvest_prediction_model.HarvestPrediction)
+@admin.register(HarvestPrediction)
 class HarvestPredictionAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(harvest_practice_model.HarvestPractice)
+@admin.register(HarvestPractice)
 class HarvestPracticeAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Disease)
+class DiseaseAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Cure)
+class CureAdmin(admin.ModelAdmin):
+    pass
+
 
 

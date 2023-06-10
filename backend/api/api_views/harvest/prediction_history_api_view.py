@@ -1,4 +1,4 @@
-from rest_framework import status, permissions
+from rest_framework import permissions
 from rest_framework.generics import ListAPIView
 
 from api.models import HarvestPrediction
@@ -18,7 +18,7 @@ class HarvestPredictionHistoryAPIView(ListAPIView):
         limit = self.request.GET.get('limit')
 
         if limit:
-            return HarvestPrediction.objects.order_by('-id')[:int(limit)]
+            return HarvestPrediction.objects.filter(user=self.request.user).order_by('-id')[:int(limit)]
         else:
             # if no prediction limit provided return empty
             return HarvestPrediction.objects.none()

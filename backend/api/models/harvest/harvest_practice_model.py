@@ -1,6 +1,6 @@
 from django.db import models
 
-from .variety_model import Variety
+from api.models.variety_model import Variety
 
 
 class HarvestPractice(models.Model):
