@@ -3,6 +3,7 @@ import requests
 from django.contrib.auth import get_user_model
 from django.conf import settings
 from rest_framework.views import APIView
+from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework import status
 from rest_framework.response import Response
 
@@ -39,25 +40,8 @@ class CreateAccount(APIView):
         return Response(reg_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class CurrentUser(APIView):
-    """ Handle current user related operations """
+class UserAPIView(RetrieveUpdateAPIView):
+    serializer_class = UserSerializer
 
-    permission_classes = [permissions.IsAuthenticated]
-
-    """ Gets the current user """
-    def get(self, request):
-        serializer = UserSerializer(self.request.user, context={'request': request})
-        return Response(serializer.data)
-
-    """ Updated current user """
-    def patch(self, request, *args, **kwargs):
-        serializer = UserSerializer(
-            self.request.user,
-            data=request.data,
-            context={'request': request},
-            partial=True
-        )
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def get_object(self):
+        return self.request.user

@@ -1,12 +1,12 @@
 from django.urls import path
-from .api_views import CreateAccount, CurrentUser, HarvestPredictionAPIView, TestAPIView, VarietyListAPIView, \
+from .api_views import CreateAccount, UserAPIView, HarvestPredictionAPIView, TestAPIView, VarietyListAPIView, \
    VarietyRetrieveAPIView, HarvestPredictionHistoryAPIView, BananaDiseaseMRCNNAPIView
 
 app_name = 'api'
 
 urlpatterns = [
    path('profile/create', CreateAccount.as_view(), name="create_user"),
-   path('profile', CurrentUser.as_view(), name="profile"),
+   path('profile', UserAPIView.as_view(), name="profile"),
 
    # variety related paths
    path('banana-variety/all', VarietyListAPIView.as_view(), name='variety-list'),

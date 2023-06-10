@@ -46,16 +46,14 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    profile_pic = serializers.SerializerMethodField()
+    profile_pic = serializers.ImageField()  # Add write_only=True to exclude the field from response
 
     class Meta:
         model = User
         fields = ('id', 'email', 'username', 'first_name', 'last_name', 'profile_pic')
 
-    def get_profile_pic(self, obj):
-        if obj.profile_pic:
-            # Assuming your profile_pic field stores the file name/path
-            # Update the URL format according to your media configuration
-            return self.context['request'].build_absolute_uri(obj.profile_pic.url)
-        else:
-            return None
+    def update(self, instance, validated_data):
+        profile_pic = validated_data.pop('profile_pic', None)
+        if profile_pic:
+            instance.profile_pic = profile_pic
+        return super().update(instance, validated_data)
