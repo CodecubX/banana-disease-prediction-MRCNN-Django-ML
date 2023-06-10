@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from api.models import Test, User, Variety, HarvestPractice, HarvestPrediction, Disease, Cure
+from api.models import Test, User, Variety, HarvestPractice, HarvestPrediction, Disease, Cure, DiseasePrediction
 
 
 # --- for testing ---
@@ -36,6 +36,11 @@ class DiseaseAdmin(admin.ModelAdmin):
 
 @admin.register(Cure)
 class CureAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(DiseasePrediction)
+class DiseasePredictionAdmin(admin.ModelAdmin):
     pass
 
 
