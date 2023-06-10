@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from api.models.harvest_practices_model import HarvestPractice
+from api.models.harvest_practice_model import HarvestPractice
 
 
 class HarvestPracticeSerializer(serializers.ModelSerializer):

@@ -26,5 +26,7 @@ class HarvestPrediction(models.Model):
     harvest = models.CharField(max_length=50)
     top_probabilities = models.JSONField()
 
+    created_at = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return f'{self.variety}: {self.harvest}'

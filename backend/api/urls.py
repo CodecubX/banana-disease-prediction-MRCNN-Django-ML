@@ -1,6 +1,6 @@
 from django.urls import path
 from .api_views import CreateAccount, CurrentUser, HarvestPredictionAPIView, TestAPIView, VarietyListAPIView, \
-   VarietyRetrieveAPIView
+   VarietyRetrieveAPIView, HarvestPredictionHistoryAPIView
 
 app_name = 'api'
 
@@ -15,6 +15,7 @@ urlpatterns = [
    # Harvest predictions related paths
    path('harvest/predict', HarvestPredictionAPIView.as_view(), name='harvest_prediction'),
    path('harvest/data', HarvestPredictionAPIView.as_view(), name='harvesting_time'),
+   path('harvest/prediction-history', HarvestPredictionHistoryAPIView.as_view(), name='harvest_prediction_history'),
 
    # --- for testing --
    path('tests', TestAPIView.as_view(), name='test')

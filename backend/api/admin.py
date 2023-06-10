@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from api.models import user_model, test_model, variety_model, harvest_prediction_model, harvest_practices_model
+from api.models import user_model, test_model, variety_model, harvest_prediction_model, harvest_practice_model
 
 
 # --- for testing ---
@@ -24,7 +24,7 @@ class HarvestPredictionAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(harvest_practices_model.HarvestPractice)
+@admin.register(harvest_practice_model.HarvestPractice)
 class HarvestPracticeAdmin(admin.ModelAdmin):
     pass
 

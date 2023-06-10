@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from api.models import Variety, HarvestPrediction
 
-from api.serializers.harvest_practices_serializer import HarvestPracticeSerializer
+from api.serializers.harvest.harvest_practice_serializer import HarvestPracticeSerializer
 
 from api.utils import harvest_prediction, calculate_harvesting_time
 
