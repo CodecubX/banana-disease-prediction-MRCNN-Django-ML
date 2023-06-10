@@ -50,7 +50,7 @@ class MaskRCNNModel:
 
         self.class_names = self.config.CLASS_NAMES
 
-    def predict(self, img_path):
+    def predict(self, img_path, show_box=False, verbose=False):
         """
         Runs object detection on the specified image and returns the predicted class names.
 
@@ -85,7 +85,7 @@ class MaskRCNNModel:
                 None,  # ax
                 True,  # show_mask=
                 True,  # show_mask_polygon
-                True,  # show_bbox
+                show_box,  # show_bbox
                 None,  # colors
                 None,  # captions
                 True,  # show_caption
@@ -94,10 +94,34 @@ class MaskRCNNModel:
                 None  # min_score
             )
 
-        # Output the predicted class names of the detected objects
-        predicted_class_ids = detected[0]['class_ids']
-        pred_to_text = [self.class_names[class_id] for class_id in predicted_class_ids]
-        return pred_to_text
+        # get area of each ROI
+        class_scores_areas = {}
+
+        # Iterate over the class IDs, scores, and masks simultaneously
+        for class_id, score, mask in zip(results['class_ids'], results['scores'],
+                                         results['masks'].transpose(2, 0, 1)):
+            # Check if the class ID is already present in the dictionary
+            if class_id not in class_scores_areas:
+                # If not, initialize an empty list for that class ID
+                class_scores_areas[class_id] = []
+
+            # Calculate the area of the mask
+            area = mask.sum()
+
+            # Append the score and area to the class's list
+            class_scores_areas[class_id].append({'score': score, 'area': area})
+
+        # Convert numerical class IDs to labels
+        class_scores_areas_with_labels = {}
+        for class_id, scores_areas in class_scores_areas.items():
+            class_name = self.class_names[class_id]
+            class_scores_areas_with_labels[class_name] = scores_areas
+
+        if verbose:
+            print(f'Detected Results:\n\t{class_scores_areas_with_labels}')
+
+
+        return class_scores_areas_with_labels
 
 # model = MaskRCNNModel()
 # pred_to_text = model.predict('bb.jpeg')

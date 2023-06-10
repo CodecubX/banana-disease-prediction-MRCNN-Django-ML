@@ -25,7 +25,7 @@ ROOT_DIR = os.path.abspath("../")
 
 # Import Mask RCNN
 sys.path.append(ROOT_DIR)  # To find local version of the library
-from mrcnn import utils
+from ..mrcnn import utils
 
 
 ############################################################
@@ -88,6 +88,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
                       filter_classes=None, min_score=None):
 
     """
+    show_fig (boolean): whether to show the detected figure
     boxes: [num_instance, (y1, x1, y2, x2, class_id)] in image coordinates.
     masks: [height, width, num_instances]
     class_ids: [num_instances]
@@ -116,7 +117,8 @@ def display_instances(image, boxes, masks, class_ids, class_names,
     auto_show = False
     if not ax:
         _, ax = plt.subplots(1, figsize=figsize)
-        auto_show = True
+        # to show the image uncomment this
+        auto_show = False
 
     # Generate random colors
     colors = colors or random_colors(N)
@@ -191,6 +193,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
         plt.savefig(save_fig_path, bbox_inches="tight")
     if auto_show:
         plt.show()
+
 
 def display_differences(image,
                         gt_box, gt_class_id, gt_mask,
