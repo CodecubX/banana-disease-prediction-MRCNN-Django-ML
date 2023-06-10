@@ -12,10 +12,5 @@ class HarvestPredictionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = HarvestPrediction
-        fields = ['id', 'predicted_harvest', 'agro_climatic_region', 'plant_density',
-                  'spacing_between_plants', 'pesticides_used', 'plant_generation',
-                  'fertilizer_type', 'soil_pH', 'amount_of_sunlight_received',
-                  'watering_schedule', 'number_of_leaves', 'height', 'variety',
-                  'user', 'harvest', 'top_probabilities', 'created_at',
-                  'post_harvest_practices', 'post_harvest_practices']
+        fields = '__all__'
 
