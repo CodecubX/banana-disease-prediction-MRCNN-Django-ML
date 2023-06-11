@@ -74,7 +74,6 @@ class BananaDiseaseMRCNNAPIView(APIView):
             avg_confidence = float(data['avg_confidence'])  # Convert to float
             total_area = int(data['total_area'])  # Convert to int
             top_probabilities[class_name] = {'avg_confidence': avg_confidence, 'total_area': total_area}
-        top_probabilities_json = json.dumps(top_probabilities)
 
         error = None
 
@@ -88,16 +87,11 @@ class BananaDiseaseMRCNNAPIView(APIView):
                 prediction = DiseasePrediction()
 
                 # Set the fields with the corresponding values
-                # prediction.img = original_img_path
-                print('here2')
-                # prediction.detected_img = destination_path
-                print('here3')
+                prediction.img = original_img_path
+                prediction.detected_img = destination_path
                 prediction.user = request.user
-                print('here4')
                 prediction.disease = disease
-                print('here5')
-                # prediction.top_probabilities = top_probabilities_json
-                print('here x')
+                prediction.top_probabilities = top_probabilities
                 # Save the instance
                 prediction.save()
             except Exception as e:
