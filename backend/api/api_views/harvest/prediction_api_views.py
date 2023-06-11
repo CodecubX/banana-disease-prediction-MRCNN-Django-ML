@@ -65,8 +65,10 @@ class HarvestPredictionAPIView(APIView):
         Returns:
             Response: The HTTP response containing the prediction results and other data.
         """
+        data = request.data
         # build data for model with request data
-        sample_data = build_model_data(request.data)
+        sample_data = build_model_data(data)
+
 
         try:
             # Perform the harvest prediction using your existing function
@@ -82,7 +84,7 @@ class HarvestPredictionAPIView(APIView):
 
         try:
             # retrieve practices
-            variety_obj = Variety.objects.prefetch_related('harvestpractice_set').get(variety=variety)
+            variety_obj = Variety.objects.prefetch_related('harvestpractice_set').get(variety=data.variety)
             practices = variety_obj.harvestpractice_set.all()
 
             serializer = self.serializer_class(practices, many=True)
@@ -94,17 +96,17 @@ class HarvestPredictionAPIView(APIView):
                 # Create HarvestPrediction instance
                 harvest_prediction_instance = HarvestPrediction(
                     predicted_harvest=prediction,
-                    agro_climatic_region=agro_climatic_region,
-                    plant_density=plant_density,
-                    spacing_between_plants=spacing_between_plants,
-                    pesticides_used=pesticides_used,
-                    plant_generation=plant_generation,
-                    fertilizer_type=fertilizer_type,
-                    soil_pH=soil_ph,
-                    amount_of_sunlight_received=amount_of_sunlight,
-                    watering_schedule=watering_schedule,
-                    number_of_leaves=number_of_leaves,
-                    height=height,
+                    agro_climatic_region=data.agro_climatic_region,
+                    plant_density=data.plant_density,
+                    spacing_between_plants=data.spacing_between_plants,
+                    pesticides_used=data.pesticides_used,
+                    plant_generation=data.plant_generation,
+                    fertilizer_type=data.fertilizer_type,
+                    soil_pH=data.soil_ph,
+                    amount_of_sunlight_received=data.amount_of_sunlight,
+                    watering_schedule=data.watering_schedule,
+                    number_of_leaves=data.number_of_leaves,
+                    height=data.height,
                     variety=variety_obj,
                     user=request.user,
                     harvest=prediction,
