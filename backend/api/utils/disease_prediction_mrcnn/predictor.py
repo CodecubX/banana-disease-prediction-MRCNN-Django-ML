@@ -4,6 +4,9 @@ import skimage
 
 from django.conf import settings
 
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = ''
+
 import tensorflow as tf
 from tensorflow.python.keras.backend import set_session
 

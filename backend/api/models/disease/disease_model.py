@@ -11,7 +11,7 @@ class Disease(models.Model):
         ('anthracnose', 'Anthracnose'),
     ]
 
-    name = models.CharField(choices=name_choices, max_length=100, null=False, blank=False, unique=True)
+    name = models.CharField(choices=name_choices, max_length=200, null=False, blank=False, unique=True)
     description = models.TextField()
 
     img = models.ImageField(upload_to='disease/', null=True, blank=True)

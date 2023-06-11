@@ -1,6 +1,7 @@
 import os
 import shutil
 import uuid
+import json
 from django.conf import settings
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
@@ -27,6 +28,9 @@ class BananaDiseaseMRCNNAPIView(APIView):
     parser_classes = [MultiPartParser, FormParser]
 
     serializer_class = DiseaseCureSerializer
+
+    def get_object(self, name):
+        return Disease.objects.get(name=name)
 
     def post(self, request, *args, **kwargs):
         try:
@@ -64,34 +68,52 @@ class BananaDiseaseMRCNNAPIView(APIView):
 
         top_disease = list(sorted_results.keys())[0]
 
-        try:
-            disease = Disease.objects.filter(name=top_disease).first()
-            disease = self.serializer_class(disease).data
+        # Convert sorted_results dictionary to JSON string
+        top_probabilities = {}
+        for class_name, data in sorted_results.items():
+            avg_confidence = float(data['avg_confidence'])  # Convert to float
+            total_area = int(data['total_area'])  # Convert to int
+            top_probabilities[class_name] = {'avg_confidence': avg_confidence, 'total_area': total_area}
+        top_probabilities_json = json.dumps(top_probabilities)
 
+        error = None
+
+        try:
+            disease = self.get_object(name=top_disease)
+            serializer = self.serializer_class(disease)
+            disease_data = serializer.data
+            print('here', disease_data)
             try:
                 # Create an instance of DiseasePrediction
                 prediction = DiseasePrediction()
 
                 # Set the fields with the corresponding values
-                prediction.img = original_img_path
-                prediction.detected_img = destination_path
+                # prediction.img = original_img_path
+                print('here2')
+                # prediction.detected_img = destination_path
+                print('here3')
                 prediction.user = request.user
+                print('here4')
                 prediction.disease = disease
-                prediction.top_probabilities = sorted_results
-
+                print('here5')
+                # prediction.top_probabilities = top_probabilities_json
+                print('here x')
                 # Save the instance
                 prediction.save()
             except Exception as e:
+                error = 'Failed to save to history.'
                 print(f'INFO: Failed to save to history: {e}')
 
         except Disease.DoesNotExist:
-            disease = 'Disease not found'
+            disease_data = None
+            error = 'Disease not found'
 
         context = {
-            'prediction': disease,
+            'prediction': disease_data,
             'top_probabilities': sorted_results,
             'original_img_url': original_img_url,
-            'detected_img_url': detected_img_url
+            'detected_img_url': detected_img_url,
+            'error': error
         }
 
         return Response(context)
