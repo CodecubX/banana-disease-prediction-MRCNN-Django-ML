@@ -110,7 +110,7 @@ class HarvestPredictionAPIView(APIView):
         # Return the prediction and probabilities as a JSON response
         response_data = {
             'prediction': prediction,
-            'probabilities': probabilities,
+            'top_probabilities': probabilities,
             'post_harvest_practices': serializer.data
         }
         return Response(response_data, status=status.HTTP_200_OK)

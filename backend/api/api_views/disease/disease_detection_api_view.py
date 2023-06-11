@@ -9,8 +9,13 @@ from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from api.models import Disease, DiseasePrediction
+
 from api.utils.disease_prediction_mrcnn.predictor import MaskRCNNModel
 
+from api.serializers import DiseaseCureSerializer
+
+from .utils.utils import filter_and_calculate_area
 
 model = MaskRCNNModel()
 
@@ -20,6 +25,8 @@ class BananaDiseaseMRCNNAPIView(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
+
+    serializer_class = DiseaseCureSerializer
 
     def post(self, request, *args, **kwargs):
         try:
@@ -35,41 +42,56 @@ class BananaDiseaseMRCNNAPIView(APIView):
         original_img_path = os.path.join(settings.MEDIA_ROOT, original_img_file)
 
         destination_directory = os.path.join(settings.MEDIA_ROOT, 'disease_detection', 'detected')
-        # save copy
+        # create unique file name
         unique_filename = str(uuid.uuid4()) + '.jpg'
+
         destination_path = os.path.join(destination_directory, unique_filename)
 
-        # Create the destination directory if it doesn't exist
+        # create the destination directory if it doesn't exist
         os.makedirs(destination_directory, exist_ok=True)
-
+        # save copy
         shutil.copyfile(original_img_path, destination_path)
 
         # get predictions
         predictions = model.predict(destination_path)
 
-        # Construct the URL for the output image
-        img_url = request.build_absolute_uri(settings.MEDIA_URL + destination_path)
-
-        # Remove sub-objects with an area of 0
-        filtered_data = {}
-        for class_name, objects in predictions.items():
-            filtered_objects = [obj for obj in objects if obj['area'] != 0]
-            if filtered_objects:
-                filtered_data[class_name] = filtered_objects
-
-        # Calculate average confidence scores and total area for each class
-        result_dict = {}
-        for class_name, objects in filtered_data.items():
-            avg_confidence = sum(obj['score'] for obj in objects) / len(objects)
-            total_area = sum(obj['area'] for obj in objects)
-            result_dict[class_name] = {'avg_confidence': avg_confidence, 'total_area': total_area}
+        # Construct the URLs for the output images
+        original_img_url = request.build_absolute_uri(settings.MEDIA_URL + original_img_path)
+        detected_img_url = request.build_absolute_uri(settings.MEDIA_URL + destination_path)
 
         # Sort the result dictionary based on total area in descending order
-        sorted_result = dict(sorted(result_dict.items(), key=lambda x: x[1]['total_area'], reverse=True))
+        sorted_results = filter_and_calculate_area(predictions)
+
+        top_disease = list(sorted_results.keys())[0]
+
+        try:
+            disease = Disease.objects.filter(name=top_disease).first()
+            disease = self.serializer_class(disease).data
+
+            try:
+                # Create an instance of DiseasePrediction
+                prediction = DiseasePrediction()
+
+                # Set the fields with the corresponding values
+                prediction.img = original_img_path
+                prediction.detected_img = destination_path
+                prediction.user = request.user
+                prediction.disease = disease
+                prediction.top_probabilities = sorted_results
+
+                # Save the instance
+                prediction.save()
+            except Exception as e:
+                print(f'INFO: Failed to save to history: {e}')
+
+        except Disease.DoesNotExist:
+            disease = 'Disease not found'
 
         context = {
-            'predictions': sorted_result,
-            'img_url': img_url
+            'prediction': disease,
+            'top_probabilities': sorted_results,
+            'original_img_url': original_img_url,
+            'detected_img_url': detected_img_url
         }
 
         return Response(context)
