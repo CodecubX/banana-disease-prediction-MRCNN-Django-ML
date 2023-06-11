@@ -30,9 +30,28 @@ class BananaDiseaseMRCNNAPIView(APIView):
     serializer_class = DiseaseCureSerializer
 
     def get_object(self, name):
+        """
+            Retrieves a Disease object based on the given name.
+
+            Parameters:
+                name (str): The name of the Disease.
+            Returns:
+                Disease: The Disease object with the matching name.
+            """
         return Disease.objects.get(name=name)
 
     def post(self, request, *args, **kwargs):
+        """
+        Handles the POST request for disease detection and related operations.
+
+        Parameters:
+            request (HttpRequest): The HTTP request object.
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Returns:
+            Response: The HTTP response containing the detection results and related information.
+        """
         try:
             file_obj = request.FILES['image']
         except Exception:
@@ -56,8 +75,12 @@ class BananaDiseaseMRCNNAPIView(APIView):
         # save copy
         shutil.copyfile(original_img_path, destination_path)
 
-        # get predictions
-        predictions = model.predict(destination_path)
+        try:
+            # get predictions
+            predictions = model.predict(destination_path)
+        except Exception as e:
+            print(f'INFO: {e}')
+            return Response({'error': 'Something went wrong while detecting'}, status=status.HTTP_409_CONFLICT)
 
         # Construct the URLs for the output images
         original_img_url = request.build_absolute_uri(settings.MEDIA_URL + original_img_path)
@@ -75,13 +98,17 @@ class BananaDiseaseMRCNNAPIView(APIView):
             total_area = int(data['total_area'])  # Convert to int
             top_probabilities[class_name] = {'avg_confidence': avg_confidence, 'total_area': total_area}
 
-        error = None
+        context = {
+            'top_probabilities': sorted_results,
+            'original_img_url': original_img_url,
+            'detected_img_url': detected_img_url,
+        }
 
         try:
             disease = self.get_object(name=top_disease)
             serializer = self.serializer_class(disease)
             disease_data = serializer.data
-            print('here', disease_data)
+
             try:
                 # Create an instance of DiseasePrediction
                 prediction = DiseasePrediction()
@@ -97,10 +124,12 @@ class BananaDiseaseMRCNNAPIView(APIView):
             except Exception as e:
                 error = 'Failed to save to history.'
                 print(f'INFO: Failed to save to history: {e}')
+                context['error'] = error
 
         except Disease.DoesNotExist:
-            disease_data = None
             error = 'Disease not found'
+            context['prediction'] = []
+            context['error'] = error
 
         context = {
             'prediction': disease_data,
