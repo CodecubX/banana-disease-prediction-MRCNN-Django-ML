@@ -8,6 +8,8 @@ from api.serializers.harvest.harvest_practice_serializer import HarvestPracticeS
 
 from api.utils import harvest_prediction, calculate_harvesting_time
 
+from .utils.utils import build_model_data
+
 
 class HarvestPredictionAPIView(APIView):
     """ Handles Harvest Predictions related operations """
@@ -17,6 +19,20 @@ class HarvestPredictionAPIView(APIView):
     serializer_class = HarvestPracticeSerializer
 
     def get(self, request, *args, **kwargs):
+        """
+        Retrieves the estimated harvesting time based on the variety and age in days.
+
+        Parameters:
+            request (HttpRequest): The HTTP request object.
+            variety (int): The ID of the variety.
+            age (int): The age in days.
+
+        Returns:
+            Response: The estimated harvesting time in days as a JSON response.
+
+        Raises:
+            NotFound (HTTP 404): If the specified variety is not found.
+        """
         # Extract the age in days and variety from the URL params
         variety_id = request.GET.get('variety')
         age_in_days = int(request.GET.get('age'))
@@ -38,35 +54,19 @@ class HarvestPredictionAPIView(APIView):
         return Response(response_data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        # Extract the data from the request
-        variety = request.data.get('variety')
-        agro_climatic_region = request.data.get('agro_climatic_region')
-        plant_density = request.data.get('plant_density')
-        spacing_between_plants = request.data.get('spacing_between_plants')
-        pesticides_used = request.data.get('pesticides_used')
-        plant_generation = request.data.get('plant_generation')
-        fertilizer_type = request.data.get('fertilizer_type')
-        soil_ph = request.data.get('soil_ph')
-        amount_of_sunlight = request.data.get('amount_of_sunlight')
-        watering_schedule = request.data.get('watering_schedule')
-        number_of_leaves = request.data.get('number_of_leaves')
-        height = request.data.get('height')
+        """
+        Handles the POST request for harvest prediction.
 
-        # Create the data dictionary
-        sample_data = {
-            "Variety": variety,
-            "Agro-climatic region": agro_climatic_region,
-            "Plant density(Min=1,Max=5)": plant_density,
-            "Spacing between plants (m)": spacing_between_plants,
-            'Pesticides used(Yes, No)': pesticides_used,
-            "Plant generation": plant_generation,
-            "Fertilizer type": fertilizer_type,
-            "Soil pH": soil_ph,
-            "Amount of sunlight received": amount_of_sunlight,
-            "Watering schedule": watering_schedule,
-            "Number of leaves": number_of_leaves,
-            "Height (m)": height
-        }
+        Parameters:
+            request (HttpRequest): The HTTP request object.
+            *args: Additional positional arguments.
+            **kwargs: Additional keyword arguments.
+
+        Returns:
+            Response: The HTTP response containing the prediction results and other data.
+        """
+        # build data for model with request data
+        sample_data = build_model_data(request.data)
 
         try:
             # Perform the harvest prediction using your existing function
@@ -86,6 +86,9 @@ class HarvestPredictionAPIView(APIView):
             practices = variety_obj.harvestpractice_set.all()
 
             serializer = self.serializer_class(practices, many=True)
+
+            # add post harvest practices to response data
+            context['post_harvest_practices'] = serializer.data
 
             try:
                 # Create HarvestPrediction instance
@@ -113,10 +116,10 @@ class HarvestPredictionAPIView(APIView):
             except Exception as e:
                 print('INFO: Failed to save predictions to database')
 
-            context['post_harvest_practices'] = serializer.data
-
         except Variety.DoesNotExist:
             error = "Failed to save record to history. Variety does not exists in database"
+
+            context['post_harvest_practices'] = []
             context['error'] = error
 
         return Response(context, status=status.HTTP_200_OK)
