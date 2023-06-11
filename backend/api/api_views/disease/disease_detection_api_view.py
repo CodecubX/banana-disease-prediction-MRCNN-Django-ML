@@ -62,22 +62,22 @@ class BananaDiseaseMRCNNAPIView(APIView):
 
         # save the image
         original_img_file = default_storage.save('disease_detection/original/temp_image.jpg', ContentFile(file_obj.read()))
-        original_img_path = os.path.join(settings.MEDIA_ROOT, original_img_file)
+        original_img_path = original_img_file
 
-        destination_directory = os.path.join(settings.MEDIA_ROOT, 'disease_detection', 'detected')
+        destination_directory = 'disease_detection/detected'
         # create unique file name
-        unique_filename = str(uuid.uuid4()) + '.jpg'
+        unique_filename = str(uuid.uuid4())[:20] + '.jpg'
 
         destination_path = os.path.join(destination_directory, unique_filename)
 
         # create the destination directory if it doesn't exist
         os.makedirs(destination_directory, exist_ok=True)
         # save copy
-        shutil.copyfile(original_img_path, destination_path)
+        shutil.copyfile(os.path.join(settings.MEDIA_ROOT, original_img_path), os.path.join(settings.MEDIA_ROOT,destination_path))
 
         try:
             # get predictions
-            predictions = model.predict(destination_path)
+            predictions = model.predict(os.path.join(settings.MEDIA_ROOT, destination_path))
         except Exception as e:
             print(f'INFO: {e}')
             return Response({'error': 'Something went wrong while detecting'}, status=status.HTTP_409_CONFLICT)
@@ -99,14 +99,14 @@ class BananaDiseaseMRCNNAPIView(APIView):
             top_probabilities[class_name] = {'avg_confidence': avg_confidence, 'total_area': total_area}
 
         context = {
-            'top_probabilities': sorted_results,
+            'probabilities': sorted_results,
             'original_img_url': original_img_url,
             'detected_img_url': detected_img_url,
         }
 
         try:
             disease = self.get_object(name=top_disease)
-            serializer = self.serializer_class(disease)
+            serializer = self.serializer_class(disease, context={'request': request})
             disease_data = serializer.data
 
             try:
@@ -126,17 +126,11 @@ class BananaDiseaseMRCNNAPIView(APIView):
                 print(f'INFO: Failed to save to history: {e}')
                 context['error'] = error
 
+            # add disease and cure data to response data
+            context['prediction'] = disease_data
         except Disease.DoesNotExist:
             error = 'Disease not found'
             context['prediction'] = []
             context['error'] = error
-
-        context = {
-            'prediction': disease_data,
-            'top_probabilities': sorted_results,
-            'original_img_url': original_img_url,
-            'detected_img_url': detected_img_url,
-            'error': error
-        }
 
         return Response(context)

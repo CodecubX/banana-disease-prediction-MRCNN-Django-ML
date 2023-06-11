@@ -41,7 +41,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
-    profile_pic = models.ImageField(upload_to='profile/', null=True, blank=True)
+    profile_pic = models.ImageField(upload_to='profile/', max_length=500, null=True, blank=True)
 
     objects = CustomUserManager()
     USERNAME_FIELD = 'username'

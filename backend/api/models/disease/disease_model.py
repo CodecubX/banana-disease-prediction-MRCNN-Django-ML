@@ -14,7 +14,7 @@ class Disease(models.Model):
     name = models.CharField(choices=name_choices, max_length=200, null=False, blank=False, unique=True)
     description = models.TextField()
 
-    img = models.ImageField(upload_to='disease/', null=True, blank=True)
+    img = models.ImageField(upload_to='disease/', max_length=500, null=True, blank=True)
 
     def __str__(self):
         return self.get_name_display()

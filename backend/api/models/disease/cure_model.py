@@ -9,7 +9,7 @@ class Cure(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField()
 
-    img = models.ImageField(upload_to='cure/', null=True, blank=True)
+    img = models.ImageField(upload_to='cure/', max_length=500, null=True, blank=True)
 
     disease = models.ForeignKey(Disease, on_delete=models.CASCADE, null=False, blank=False)
 

@@ -8,9 +8,14 @@ from .cure_serializer import CureSerializer
 class DiseaseCureSerializer(serializers.ModelSerializer):
     """ Serializes the Disease model objects """
 
-    cures = CureSerializer(many=True, read_only=True)  # Nested serialization for associated cures
+    cures = CureSerializer(source='cure_set', many=True)  # Nested serialization for associated cures
+    img = serializers.SerializerMethodField()
 
     class Meta:
         model = Disease
         fields = ['name', 'description', 'img', 'cures']
 
+    def get_img(self, obj):
+        if obj.img:
+            return self.context['request'].build_absolute_uri(obj.img.url)
+        return None

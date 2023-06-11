@@ -7,8 +7,8 @@ from .disease_model import Disease
 class DiseasePrediction(models.Model):
     """ Holds Disease predictions data """
 
-    img = models.ImageField(upload_to='disease_prediction/original', null=True, blank=True)
-    detected_img = models.ImageField(upload_to='disease_prediction/detected', null=True, blank=True)
+    img = models.ImageField(upload_to='disease_prediction/original', max_length=500, null=True, blank=True)
+    detected_img = models.ImageField(upload_to='disease_prediction/detected', max_length=500, null=True, blank=True)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
     # fields for prediction fields

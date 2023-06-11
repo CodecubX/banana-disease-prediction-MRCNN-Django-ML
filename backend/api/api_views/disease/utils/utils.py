@@ -23,7 +23,7 @@ def filter_and_calculate_area(predictions):
     for class_name, objects in filtered_data.items():
         avg_confidence = sum(obj['score'] for obj in objects) / len(objects)
         total_area = sum(obj['area'] for obj in objects)
-        result_dict[class_name] = {'avg_confidence': avg_confidence, 'total_area': total_area}
+        result_dict[class_name] = {'avg_confidence': format(avg_confidence, '.3f'), 'total_area': total_area}
 
     # Sort the result dictionary based on total area in descending order
     sorted_result = dict(sorted(result_dict.items(), key=lambda x: x[1]['total_area'], reverse=True))
