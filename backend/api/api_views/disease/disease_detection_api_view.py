@@ -29,16 +29,18 @@ class BananaDiseaseMRCNNAPIView(APIView):
 
     serializer_class = DiseaseCureSerializer
 
-    def get_object(self, name):
+    def get_object(self, *args, **kwargs):
         """
-            Retrieves a Disease object based on the given name.
+        Retrieves a Disease object based on the given filter parameters.
 
-            Parameters:
-                name (str): The name of the Disease.
-            Returns:
-                Disease: The Disease object with the matching name.
-            """
-        return Disease.objects.get(name=name)
+        Parameters:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Returns:
+            Disease: The Disease object matching the filter parameters.
+        """
+        return Disease.objects.get(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         """

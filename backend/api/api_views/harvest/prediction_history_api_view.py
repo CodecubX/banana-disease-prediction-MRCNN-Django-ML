@@ -18,7 +18,7 @@ class HarvestPredictionHistoryAPIView(ListAPIView):
         limit = self.request.GET.get('limit')
 
         if limit:
-            return HarvestPrediction.objects.filter(user=self.request.user).order_by('-id')[:int(limit)]
+            return HarvestPrediction.objects.filter(user=self.request.user).order_by('-created_at')[:int(limit)]
         else:
             # if no prediction limit provided return empty
             return HarvestPrediction.objects.none()
