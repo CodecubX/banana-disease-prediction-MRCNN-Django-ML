@@ -10,10 +10,11 @@ class DiseaseCureSerializer(serializers.ModelSerializer):
 
     cures = CureSerializer(source='cure_set', many=True)  # Nested serialization for associated cures
     img = serializers.SerializerMethodField()
+    name_display = serializers.CharField(source='get_name_display', read_only=True)
 
     class Meta:
         model = Disease
-        fields = ['name', 'description', 'img', 'cures']
+        fields = '__all__'
 
     def get_img(self, obj):
         if obj.img:

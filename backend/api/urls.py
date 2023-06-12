@@ -1,6 +1,6 @@
 from django.urls import path
 from .api_views import CreateAccount, UserAPIView, HarvestPredictionAPIView, TestAPIView, VarietyListAPIView, \
-   VarietyRetrieveAPIView, HarvestPredictionHistoryAPIView, BananaDiseaseMRCNNAPIView, DiseasePredictionHistoryAPIView
+   VarietyRetrieveAPIView, HarvestPredictionHistoryAPIView, BananaDiseaseMRCNNAPIView, DiseaseAndCureAPIView, DiseasePredictionHistoryAPIView
 
 app_name = 'api'
 
@@ -18,6 +18,7 @@ urlpatterns = [
    path('harvest/prediction-history', HarvestPredictionHistoryAPIView.as_view(), name='harvest_prediction_history'),
 
    # image based disease detection - MRCNN
+   path('disease', DiseaseAndCureAPIView.as_view(), name='disease_and_cure'),
    path('disease/detect', BananaDiseaseMRCNNAPIView.as_view(), name='disease_detection_mrcnn'),
    path('disease/prediction-history', DiseasePredictionHistoryAPIView.as_view(), name='disease_prediction_history'),
 
