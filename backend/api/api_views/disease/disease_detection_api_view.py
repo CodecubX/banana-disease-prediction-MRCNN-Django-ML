@@ -129,10 +129,10 @@ class BananaDiseaseMRCNNAPIView(APIView):
                 context['error'] = error
 
             # add disease and cure data to response data
-            context['prediction'] = disease_data
+            context['disease'] = disease_data
         except Disease.DoesNotExist:
             error = 'Disease not found'
-            context['prediction'] = []
+            context['disease'] = []
             context['error'] = error
 
         return Response(context)
