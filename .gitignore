@@ -5,7 +5,6 @@ disease_detection_mrcnn/logs/
 disease_detection_mrcnn/mrcnn/__pycache__/
 /backend/.env
 /backend/db.sqlite3
-/backend/media/
 /water_and_fertilizer plan/saved_models/soil_type_identification_densenet_model.h5
 /water_and_fertilizer plan/saved_models/soil_type_identification_inception_model.h5
 /water_and_fertilizer plan/saved_models/soil_type_identification_mobilenet_model.h5
