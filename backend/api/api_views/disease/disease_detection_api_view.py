@@ -88,17 +88,15 @@ class BananaDiseaseMRCNNAPIView(APIView):
         original_img_url = request.build_absolute_uri(settings.MEDIA_URL + original_img_path)
         detected_img_url = request.build_absolute_uri(settings.MEDIA_URL + destination_path)
 
-        # Sort the result dictionary based on total area in descending order
+        # Sort the result array based on total area in descending order
         sorted_results = filter_and_calculate_area(predictions)
 
-        top_disease = list(sorted_results.keys())[0]
+        top_disease = sorted_results[0]['disease_name']
 
         # Convert sorted_results dictionary to JSON string
-        top_probabilities = {}
-        for class_name, data in sorted_results.items():
-            avg_confidence = float(data['avg_confidence'])  # Convert to float
-            total_area = int(data['total_area'])  # Convert to int
-            top_probabilities[class_name] = {'avg_confidence': avg_confidence, 'total_area': total_area}
+        top_predictions = {
+            'top_predictions': sorted_results
+        }
 
         context = {
             'probabilities': sorted_results,
@@ -120,7 +118,7 @@ class BananaDiseaseMRCNNAPIView(APIView):
                 prediction.detected_img = destination_path
                 prediction.user = request.user
                 prediction.disease = disease
-                prediction.top_probabilities = top_probabilities
+                prediction.top_probabilities = top_predictions
                 # Save the instance
                 prediction.save()
             except Exception as e:

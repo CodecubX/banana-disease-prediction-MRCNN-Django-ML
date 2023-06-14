@@ -6,7 +6,7 @@ def filter_and_calculate_area(predictions):
         predictions (dict): A dictionary containing class names as keys and a list of sub-objects as values.
 
     Returns:
-        dict: A dictionary containing the filtered and sorted results with class names as keys, and average
+        list: A list containing the filtered and sorted results with class names as keys, and average
               confidence scores and total area as values.
 
     """
@@ -19,13 +19,17 @@ def filter_and_calculate_area(predictions):
             filtered_data[class_name] = filtered_objects
 
     # Calculate average confidence scores and total area for each class
-    result_dict = {}
+    sorted_arr = []
     for class_name, objects in filtered_data.items():
         avg_confidence = sum(obj['score'] for obj in objects) / len(objects)
         total_area = sum(obj['area'] for obj in objects)
-        result_dict[class_name] = {'avg_confidence': format(avg_confidence, '.3f'), 'total_area': total_area}
-
+        disease_dict = {
+            'disease_name': class_name,
+            'avg_confidence': format(avg_confidence, '.3f'),
+            'total_area': total_area
+        }
+        sorted_arr.append(disease_dict)
     # Sort the result dictionary based on total area in descending order
-    sorted_result = dict(sorted(result_dict.items(), key=lambda x: x[1]['total_area'], reverse=True))
+    sorted_arr= sorted(sorted_arr, key=lambda x: x['total_area'], reverse=True)
 
-    return sorted_result
+    return sorted_arr
