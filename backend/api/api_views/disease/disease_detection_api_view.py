@@ -93,11 +93,6 @@ class BananaDiseaseMRCNNAPIView(APIView):
 
         top_disease = sorted_results[0]['disease_name']
 
-        # Convert sorted_results dictionary to JSON string
-        top_predictions = {
-            'predictions': sorted_results
-        }
-
         context = {
             'probabilities': sorted_results,
             'original_img_url': original_img_url,
@@ -118,7 +113,7 @@ class BananaDiseaseMRCNNAPIView(APIView):
                 prediction.detected_img = destination_path
                 prediction.user = request.user
                 prediction.disease = disease
-                prediction.probabilities = top_predictions
+                prediction.probabilities = sorted_results
                 # Save the instance
                 prediction.save()
                 print(f'INFO: Detection data saved to history')
