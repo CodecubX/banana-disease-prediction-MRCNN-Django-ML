@@ -23,6 +23,10 @@ def build_model_data(data):
     number_of_leaves = data.get('number_of_leaves')
     height = data.get('height')
 
+    # map water schedule
+    if watering_schedule == 'daily':
+        watering_schedule = 'Daily'
+
     # Create the data dictionary
     sample_data = {
         "Variety": variety,

@@ -21,8 +21,8 @@ def filter_and_calculate_area(predictions):
     # Calculate average confidence scores and total area for each class
     sorted_arr = []
     for class_name, objects in filtered_data.items():
-        avg_confidence = sum(obj['score'] for obj in objects) / len(objects)
-        total_area = sum(obj['area'] for obj in objects)
+        avg_confidence = float(sum(obj['score'] for obj in objects) / len(objects))
+        total_area = int(sum(obj['area'] for obj in objects))
         disease_dict = {
             'disease_name': class_name,
             'avg_confidence': format(avg_confidence, '.3f'),
@@ -30,6 +30,6 @@ def filter_and_calculate_area(predictions):
         }
         sorted_arr.append(disease_dict)
     # Sort the result dictionary based on total area in descending order
-    sorted_arr= sorted(sorted_arr, key=lambda x: x['total_area'], reverse=True)
+    sorted_arr = sorted(sorted_arr, key=lambda x: x['total_area'], reverse=True)
 
     return sorted_arr
