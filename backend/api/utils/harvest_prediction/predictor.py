@@ -2,11 +2,13 @@ import pickle
 import numpy as np
 import pandas as pd
 
-CLASSIFIER_PATH = 'api/utils/harvest_prediction/saved_models/harvest_classifier.pkl'
-ORDINAL_ENCODER_PATH = 'api/utils/harvest_prediction/helpers/harvest_data_ordinal_encoded.pkl'
-ONE_HOT_ENCODER_PATH = 'api/utils/harvest_prediction/helpers/harvest_data_one_hot_encoded.pkl'
-Y_ENCODER_PATH = 'api/utils/harvest_prediction/helpers/y_data_ordinal_encoded.pkl'
-SCALER_PATH = 'api/utils/harvest_prediction/helpers/harvest_data_scaler.pkl'
+BASE_DIR = 'api/utils/harvest_prediction/'
+
+CLASSIFIER_PATH = f'{BASE_DIR}saved_models/harvest_classifier.pkl'
+ORDINAL_ENCODER_PATH = f'{BASE_DIR}helpers/harvest_data_ordinal_encoded.pkl'
+ONE_HOT_ENCODER_PATH = f'{BASE_DIR}helpers/harvest_data_one_hot_encoded.pkl'
+Y_ENCODER_PATH = f'{BASE_DIR}helpers/y_data_ordinal_encoded.pkl'
+SCALER_PATH = f'{BASE_DIR}helpers/harvest_data_scaler.pkl'
 
 
 def get_harvest_prediction(data, classifier=CLASSIFIER_PATH,
