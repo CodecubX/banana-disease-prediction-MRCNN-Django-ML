@@ -1,11 +1,18 @@
 import pickle
 import numpy as np
 import pandas as pd
+import cv2
+from tensorflow.keras.models import load_model
+import os
+from django.conf import settings
 
 SAVE_DIR = 'api/utils/watering_plan/helpers/watering_plan_saved_data/'
+SOIL_TYPE_MODEL_PATH = 'api/utils/watering_plan/saved_models/soil_type_identification_model.h5'
+
+CLASSES = ['Black Soil', 'Cinder Soil', 'Laterite Soil', 'Peat Soil', 'Yellow Soil']
 
 
-def predict(data, model_file=f'{SAVE_DIR}water_plan_gradientboost_classifier.pkl', ordinal_encoder_file=f'{SAVE_DIR}ordinal_encoder.pkl', one_hot_encoder_file=f'{SAVE_DIR}one_hot_encoder.pkl', scaler_file=f"{SAVE_DIR}watering_plan_scaler.pkl", ordinal_encoded_target_file=f'{SAVE_DIR}ordinal_encoder_target_var.pkl'):
+def predict_watering_plan(data, model_file=f'{SAVE_DIR}water_plan_gradientboost_classifier.pkl', ordinal_encoder_file=f'{SAVE_DIR}ordinal_encoder.pkl', one_hot_encoder_file=f'{SAVE_DIR}one_hot_encoder.pkl', scaler_file=f"{SAVE_DIR}watering_plan_scaler.pkl", ordinal_encoded_target_file=f'{SAVE_DIR}ordinal_encoder_target_var.pkl'):
     # Ordinal columns (ones that have an order)
     ordinal_columns = ['organic_matter_content', 'slope']
     # Categorical columns (ones without order, already encoded)
@@ -75,3 +82,32 @@ def predict(data, model_file=f'{SAVE_DIR}water_plan_gradientboost_classifier.pkl
     top_prediction = ordinal_encoder_target.inverse_transform(predictions.reshape(1, -1)).flatten()[0]
 
     return top_prediction, result
+
+
+def get_processed_input_img(image_path, size=224):
+  test_img = cv2.imread(image_path)
+  test_img = cv2.resize(test_img, dsize=(size, size), interpolation=cv2.INTER_AREA)
+
+  test_img = test_img.reshape((1, size, size, 3)).astype(np.float32)
+
+  return test_img/225
+
+
+def predict_soil_type(img_path, model_path=SOIL_TYPE_MODEL_PATH):
+    # load trained model
+    print(model_path)
+    loaded_model = load_model(model_path)
+    processed_img = get_processed_input_img(img_path)
+    pred = loaded_model.predict(processed_img)
+    # inversely sorted array with indexes
+    best_idx = (-pred).argsort()[0]
+    # convert them to text
+    to_text = [CLASSES[i] for i in best_idx]
+    # return top prediction
+    return to_text[0]
+
+
+
+
+
+

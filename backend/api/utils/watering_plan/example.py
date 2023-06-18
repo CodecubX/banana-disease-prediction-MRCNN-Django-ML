@@ -1,4 +1,4 @@
-from .predictor import predict
+from .predictor import predict_watering_plan
 
 sample_data = {
     'pH': 6.2,
@@ -24,4 +24,4 @@ sample_data = {
     'slope': 'low'
 }
 
-predict(sample_data)
+predict_watering_plan(sample_data)

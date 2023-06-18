@@ -1,0 +1,1 @@
+from .watering_prediction_api_view import *

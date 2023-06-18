@@ -11,6 +11,7 @@ class WateringPlan(models.Model):
     ]
 
     watering_plan = models.CharField(choices=watering_plan_choices, max_length=200, null=False, blank=False, unique=True)
+    stage = models.CharField(max_length=100)
     description = models.TextField()
 
     def __str__(self):

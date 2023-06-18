@@ -29,8 +29,6 @@ class WateringPlanPrediction(models.Model):
     pest_disease_infestation = models.CharField(max_length=5)
     slope = models.CharField(max_length=10)
 
-    description = models.TextField()
-
     watering_plan = models.ForeignKey(WateringPlan, on_delete=models.DO_NOTHING, null=False, blank=False)
     top_probabilities = models.JSONField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
