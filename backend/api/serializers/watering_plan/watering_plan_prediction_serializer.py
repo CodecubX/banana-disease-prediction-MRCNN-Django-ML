@@ -8,7 +8,7 @@ from .watering_plan_serializer import WateringPlanSerializer
 class WateringPlanPredictionSerializer(serializers.ModelSerializer):
     """ Serializes the WateringPlanPrediction model objects and return selected fields """
 
-    watering_plan = WateringPlanSerializer(many=True)
+    watering_plan = WateringPlanSerializer()
 
     class Meta:
         model = WateringPlanPrediction

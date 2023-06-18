@@ -16,7 +16,7 @@ from api.utils import predict_soil_type, predict_watering_plan
 from .utils.utils import build_model_data
 
 
-class WateringPlanPredictionAPIView(APIView):
+class WateringPlanAPIView(APIView):
     """ Handles Harvest Predictions related operations """
 
     permission_classes = [permissions.IsAuthenticated]
