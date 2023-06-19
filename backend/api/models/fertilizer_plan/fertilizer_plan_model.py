@@ -17,4 +17,4 @@ class FertilizerPlan(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.get_fertilizer_type
+        return self.get_fertilizer_type_display()

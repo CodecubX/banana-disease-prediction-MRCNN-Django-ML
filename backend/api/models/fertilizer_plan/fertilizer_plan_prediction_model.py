@@ -29,8 +29,6 @@ class FertilizerPlanPrediction(models.Model):
     pest_disease_infestation = models.CharField(max_length=5)
     slope = models.CharField(max_length=10)
 
-    description = models.TextField()
-
     # fields from models
     fertilizer_type = models.ForeignKey(FertilizerPlan, on_delete=models.DO_NOTHING, null=False, blank=False)
     fertilizer_plan = models.CharField(max_length=255, null=False, blank=False)

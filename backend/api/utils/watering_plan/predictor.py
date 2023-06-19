@@ -6,13 +6,14 @@ from tensorflow.keras.models import load_model
 import os
 from django.conf import settings
 
-SAVE_DIR = 'api/utils/watering_plan/helpers/watering_plan_saved_data/'
+SAVED_DIR = 'api/utils/watering_plan/helpers/'
 SOIL_TYPE_MODEL_PATH = 'api/utils/watering_plan/saved_models/soil_type_identification_model.h5'
+WATER_PLAN_MODEL_PATH = 'api/utils/watering_plan/saved_models/water_plan_gradientboost_classifier.pkl'
 
 CLASSES = ['Black Soil', 'Cinder Soil', 'Laterite Soil', 'Peat Soil', 'Yellow Soil']
 
 
-def predict_watering_plan(data, model_file=f'{SAVE_DIR}water_plan_gradientboost_classifier.pkl', ordinal_encoder_file=f'{SAVE_DIR}ordinal_encoder.pkl', one_hot_encoder_file=f'{SAVE_DIR}one_hot_encoder.pkl', scaler_file=f"{SAVE_DIR}watering_plan_scaler.pkl", ordinal_encoded_target_file=f'{SAVE_DIR}ordinal_encoder_target_var.pkl'):
+def predict_watering_plan(data, model_file=WATER_PLAN_MODEL_PATH, ordinal_encoder_file=f'{SAVED_DIR}ordinal_encoder.pkl', one_hot_encoder_file=f'{SAVED_DIR}one_hot_encoder.pkl', scaler_file=f"{SAVED_DIR}watering_plan_scaler.pkl", ordinal_encoded_target_file=f'{SAVED_DIR}ordinal_encoder_target_var.pkl'):
     # Ordinal columns (ones that have an order)
     ordinal_columns = ['organic_matter_content', 'slope']
     # Categorical columns (ones without order, already encoded)
@@ -95,7 +96,6 @@ def get_processed_input_img(image_path, size=224):
 
 def predict_soil_type(img_path, model_path=SOIL_TYPE_MODEL_PATH):
     # load trained model
-    print(model_path)
     loaded_model = load_model(model_path)
     processed_img = get_processed_input_img(img_path)
     pred = loaded_model.predict(processed_img)

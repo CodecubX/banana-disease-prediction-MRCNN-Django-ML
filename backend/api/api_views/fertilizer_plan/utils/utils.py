@@ -36,12 +36,12 @@ def build_model_data(data):
     return sample_data
 
 
-def get_top_predictions(top_probabilities, n=3):
+def get_top_predictions(probabilities, n=3):
     """
     Get the top N predictions from a dictionary of probabilities.
 
     Parameters:
-        top_probabilities (dict): A dictionary mapping predictions to their corresponding probabilities.
+        probabilities (dict): A dictionary mapping predictions to their corresponding probabilities.
         n (int): The number of top predictions to retrieve. Default is 3.
 
     Returns:
@@ -51,6 +51,6 @@ def get_top_predictions(top_probabilities, n=3):
     Example usage:
         top_predictions = get_top_predictions(top_probabilities, n=3)
     """
-    sorted_probabilities = sorted(top_probabilities.items(), key=lambda x: float(x[1]), reverse=True)[:n]
+    sorted_probabilities = sorted(probabilities.items(), key=lambda x: float(x[1]), reverse=True)[:n]
     formatted_predictions = [{"plan": key, "probability": value} for key, value in sorted_probabilities]
     return formatted_predictions
