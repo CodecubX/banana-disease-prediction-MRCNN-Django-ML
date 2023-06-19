@@ -86,12 +86,12 @@ def predict_watering_plan(data, model_file=WATER_PLAN_MODEL_PATH, ordinal_encode
 
 
 def get_processed_input_img(image_path, size=224):
-  test_img = cv2.imread(image_path)
-  test_img = cv2.resize(test_img, dsize=(size, size), interpolation=cv2.INTER_AREA)
+    test_img = cv2.imread(image_path)
+    test_img = cv2.resize(test_img, dsize=(size, size), interpolation=cv2.INTER_AREA)
 
-  test_img = test_img.reshape((1, size, size, 3)).astype(np.float32)
+    test_img = test_img.reshape((1, size, size, 3)).astype(np.float32)
 
-  return test_img/225
+    return test_img/225
 
 
 def predict_soil_type(img_path, model_path=SOIL_TYPE_MODEL_PATH):
