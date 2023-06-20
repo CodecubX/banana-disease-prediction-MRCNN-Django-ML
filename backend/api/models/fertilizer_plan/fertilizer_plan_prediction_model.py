@@ -39,4 +39,4 @@ class FertilizerPlanPrediction(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.watering_plan.watering_plan
+        return self.fertilizer_plan
