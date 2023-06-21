@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 
-from api.models import FertilizerPlan, FertilizerPlanPrediction
+from api.models import FertilizerPlan, FertilizerPlanPrediction, Variety
 
 from api.serializers.fertilizer_plan import FertilizerPlanSerializer
 
@@ -41,6 +41,15 @@ class FertilizerPlanAPIView(APIView):
             Response: The HTTP response containing the prediction results and other data.
         """
         data = request.data
+        stage = data.get('stage')
+        try:
+            variety = int(data.get('variety'))
+        except Exception as e:
+            print(f'ERROR: {e}')
+            return Response(
+                {'error': 'Invalid Variety Id. Must be a integer'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
         # build data for model with request data
         sample_data = build_model_data(data)
 
@@ -94,8 +103,10 @@ class FertilizerPlanAPIView(APIView):
         }
 
         try:
+            variety = Variety.objects.get(id=variety)
+            print(f'INFO: Variety: {variety.variety}')
             # retrieve fertilizer plans
-            fertilizer_plan = FertilizerPlan.objects.filter(fertilizer_type=fertilizer_type)
+            fertilizer_plan = FertilizerPlan.objects.filter(fertilizer_type=fertilizer_type,  variety=variety, stage=stage)
 
             serializer = self.serializer_class(fertilizer_plan, many=True)
 
@@ -130,7 +141,7 @@ class FertilizerPlanAPIView(APIView):
                     pest_disease_infestation=sample_data.get('pest_disease_infestation'),
                     slope=sample_data.get('slope'),
 
-                    fertilizer_type=self.get_object(fertilizer_type=fertilizer_type),
+                    fertilizer_type=self.get_object(fertilizer_type=fertilizer_type, variety=variety, stage=stage),
                     fertilizer_plan=sample_data.get('fertilizer_plan'),
                     top_probabilities=top_probabilities,
                     user=request.user,
@@ -141,7 +152,7 @@ class FertilizerPlanAPIView(APIView):
                 fertilizer_plan_prediction_instance.save()
             except Exception as e:
                 error = "Failed to save record to history"
-                print(f'INFO: Failed to save predictions to database {e}')
+                print(f'ERROR: Failed to save predictions to database {e}')
                 context['error'] = error
 
         except FertilizerPlan.DoesNotExist:

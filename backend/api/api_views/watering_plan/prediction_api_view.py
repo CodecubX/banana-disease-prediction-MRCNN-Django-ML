@@ -132,8 +132,8 @@ class WateringPlanAPIView(APIView):
                 # Save the instance to the database
                 watering_plan_prediction_instance.save()
             except Exception as e:
-                error = "Failed to save record to history"
-                print(f'INFO: Failed to save predictions to database {e}')
+                error = "Failed to save record to history."
+                print(f'ERROR: Failed to save predictions to database {e}')
                 context['error'] = error
 
         except WateringPlan.DoesNotExist:
