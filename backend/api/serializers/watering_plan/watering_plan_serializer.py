@@ -8,6 +8,7 @@ class WateringPlanSerializer(serializers.ModelSerializer):
 
     watering_plan = serializers.CharField(source='get_watering_plan_display')
     stage = serializers.CharField(source='get_stage_display')
+    variety = serializers.StringRelatedField()
 
     class Meta:
         model = WateringPlan
