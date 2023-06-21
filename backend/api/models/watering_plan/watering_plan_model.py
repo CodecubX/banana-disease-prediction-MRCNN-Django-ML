@@ -1,7 +1,9 @@
 from django.db import models
 
+from api.models.abstract import AbstractBananaPlant
 
-class WateringPlan(models.Model):
+
+class WateringPlan(AbstractBananaPlant):
     """ Holds water plan model data """
 
     watering_plan_choices = [
@@ -10,9 +12,8 @@ class WateringPlan(models.Model):
         ('once every 3-4 days', 'Once Every 3-4 Days')
     ]
 
-    watering_plan = models.CharField(choices=watering_plan_choices, max_length=200, null=False, blank=False, unique=True)
-    stage = models.CharField(max_length=100)
+    watering_plan = models.CharField(choices=watering_plan_choices, max_length=200, null=False, blank=False)
     description = models.TextField()
 
     def __str__(self):
-        return self.watering_plan
+        return f'{self.watering_plan}: {self.variety}'

@@ -6,7 +6,7 @@ from api.models.variety_model import Variety
 class HarvestPractice(models.Model):
     """ Holds harvest practices """
 
-    practice_name = models.CharField(max_length=100, unique=True, null=False, blank=False)
+    practice_name = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField()
 
     variety = models.ForeignKey(Variety, default=None, null=True, blank=True, on_delete=models.CASCADE)

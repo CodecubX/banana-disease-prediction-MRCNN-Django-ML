@@ -7,6 +7,7 @@ class WateringPlanSerializer(serializers.ModelSerializer):
     """ Serializes the WateringPlan model objects and return selected fields """
 
     watering_plan = serializers.CharField(source='get_watering_plan_display')
+    stage = serializers.CharField(source='get_stage_display')
 
     class Meta:
         model = WateringPlan

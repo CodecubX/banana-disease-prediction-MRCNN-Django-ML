@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 
-from api.models import WateringPlan, WateringPlanPrediction
+from api.models import WateringPlan, WateringPlanPrediction, Variety
 
 from api.serializers.watering_plan import WateringPlanSerializer
 
@@ -39,6 +39,16 @@ class WateringPlanAPIView(APIView):
             Response: The HTTP response containing the prediction results and other data.
         """
         data = request.data
+        stage = data.get('stage')
+        try:
+            variety = int(data.get('variety'))
+        except Exception as e:
+            print(f'ERROR: {e}')
+            return Response(
+                {'error': 'Invalid Variety Id. Must be a integer'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
         # build data for model with request data
         sample_data = build_model_data(data)
 
@@ -79,8 +89,9 @@ class WateringPlanAPIView(APIView):
         }
 
         try:
+            variety = Variety.objects.get(id=variety)
             # retrieve watering plan
-            watering_plan = WateringPlan.objects.filter(watering_plan=prediction)
+            watering_plan = WateringPlan.objects.filter(watering_plan=prediction, variety=variety, stage=stage)
 
             serializer = self.serializer_class(watering_plan, many=True)
 
@@ -112,7 +123,7 @@ class WateringPlanAPIView(APIView):
                     pest_disease_infestation=sample_data.get('pest_disease_infestation'),
                     slope=sample_data.get('slope'),
 
-                    watering_plan=self.get_object(watering_plan=prediction),
+                    watering_plan=self.get_object(watering_plan=prediction, variety=variety, stage=stage),
                     top_probabilities=top_probabilities,
                     user=request.user,
 
