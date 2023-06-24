@@ -8,7 +8,7 @@ from .fertilizer_plan_serializer import FertilizerPlanSerializer
 class FertilizerPlanPredictionSerializer(serializers.ModelSerializer):
     """ Serializes the FertilizerPlanPrediction model objects and return selected fields """
 
-    fertilizer_type = FertilizerPlanSerializer()
+    fertilizer_plan = FertilizerPlanSerializer()
 
     class Meta:
         model = FertilizerPlanPrediction

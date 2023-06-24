@@ -30,7 +30,7 @@ class FertilizerPlanPrediction(models.Model):
     slope = models.CharField(max_length=10)
 
     # fields from models
-    fertilizer_type = models.ForeignKey(FertilizerPlan, on_delete=models.DO_NOTHING, null=False, blank=False)
+    fertilizer_plan = models.ForeignKey(FertilizerPlan, on_delete=models.DO_NOTHING, null=False, blank=False)
     dose = models.CharField(max_length=255, null=False, blank=False)
 
     top_probabilities = models.JSONField()
