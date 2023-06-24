@@ -11,6 +11,11 @@ from tensorflow.keras.layers import Dense, Dropout, BatchNormalization
 from tensorflow.keras.models import load_model
 from matplotlib import pyplot as plt
 
+BASE_DIR = 'api/utils/chatbot/'
+MODEL_DIR = f'{BASE_DIR}saved_models/'
+HELPER_DIR = f'{BASE_DIR}helper/'
+DATASET_DIR = f'{BASE_DIR}dataset/'
+
 
 class ChatBot:
     """
@@ -41,7 +46,7 @@ class ChatBot:
     """
     IGNORED_LETTERS = ',.?!/-_'
 
-    def __init__(self, language='english', json_file='./dataset/intents.json', mode='development'):
+    def __init__(self, language='english', json_file='intents.json', mode='production'):
         """
         Initialize the ChatBot.
 
@@ -50,7 +55,8 @@ class ChatBot:
             json_file (str): The path to the JSON file containing the intents. Default is './dataset/intents.json'.
             mode (str): The running mode of the chatbot. Default is 'development'.
         """
-        self.intents = json.loads(open(json_file, encoding='utf-8').read())
+        json_file_path = f'{DATASET_DIR}{json_file}'
+        self.intents = json.loads(open(json_file_path, encoding='utf-8').read())
         self.lemmatizer = WordNetLemmatizer()
         self.stemmer = SnowballStemmer(language='english')
         self.all_words = []
@@ -58,8 +64,8 @@ class ChatBot:
         self.dataset = []
         self.language = language
         self.mode = mode  # development or production mode
-        self.model_path = f'./saved_models/chat_bot_model_{self.language}'
-        self.helper_file_path = './saved_data/'
+        self.model_path = f'{MODEL_DIR}chat_bot_model_{self.language}'
+        self.helper_file_path = HELPER_DIR
         self.all_words_file_path = f'{self.helper_file_path}all_words_{self.language}.pkl'
         self.classes_file_path = f'{self.helper_file_path}classes_{self.language}.pkl'
 
