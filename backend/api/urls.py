@@ -2,7 +2,7 @@ from django.urls import path
 from .api_views import CreateAccount, UserAPIView, HarvestPredictionAPIView, TestAPIView, VarietyListAPIView, \
    VarietyRetrieveAPIView, HarvestPredictionHistoryAPIView, BananaDiseaseMRCNNAPIView, DiseaseAndCureAPIView, \
    DiseasePredictionHistoryAPIView, WateringPlanAPIView, WateringPlanPredictionHistoryAPIView, FertilizerPlanAPIView, \
-   FertilizerPlanPredictionHistoryAPIView
+   FertilizerPlanPredictionHistoryAPIView, ChatBotAPIView
 
 app_name = 'api'
 
@@ -19,18 +19,21 @@ urlpatterns = [
    path('harvest/data', HarvestPredictionAPIView.as_view(), name='harvesting_time'),
    path('harvest/prediction-history', HarvestPredictionHistoryAPIView.as_view(), name='harvest_prediction_history'),
 
-   # image based disease detection - MRCNN
+   # image based disease detection - MRCNN related paths
    path('disease', DiseaseAndCureAPIView.as_view(), name='disease_and_cure'),
    path('disease/detect', BananaDiseaseMRCNNAPIView.as_view(), name='disease_detection_mrcnn'),
    path('disease/prediction-history', DiseasePredictionHistoryAPIView.as_view(), name='disease_prediction_history'),
 
-   # watering plan
+   # watering plan related paths
    path('watering-plan/predict', WateringPlanAPIView.as_view(), name='watering_plan_prediction'),
    path('watering-plan/prediction-history', WateringPlanPredictionHistoryAPIView.as_view(), name='watering_plan_prediction_history'),
 
-   # fertilizer plan
+   # fertilizer plan related paths
    path('fertilizer-plan/predict', FertilizerPlanAPIView.as_view(), name='fertilizer_plan_prediction'),
    path('fertilizer-plan/prediction-history', FertilizerPlanPredictionHistoryAPIView.as_view(), name='fertilizer_plan_history'),
+
+   # chatbot related paths
+   path('chatbot', ChatBotAPIView.as_view(), name='chatbot'),
 
    # --- for testing --
    path('tests', TestAPIView.as_view(), name='test')

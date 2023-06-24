@@ -106,9 +106,10 @@ class FertilizerPlanAPIView(APIView):
             variety = Variety.objects.get(id=variety)
             print(f'INFO: Variety: {variety.variety}')
             # retrieve fertilizer plans
-            fertilizer_plan = FertilizerPlan.objects.filter(fertilizer_type=fertilizer_type,  variety=variety, stage=stage)
+            fertilizer_plan = self.get_object(fertilizer_type=fertilizer_type,  variety=variety, stage=stage)
+            print(fertilizer_plan.stage)
 
-            serializer = self.serializer_class(fertilizer_plan, many=True)
+            serializer = self.serializer_class(fertilizer_plan)
 
             # add fertilizer plan to response data
             context['fertilizer_plan'] = serializer.data
@@ -141,7 +142,7 @@ class FertilizerPlanAPIView(APIView):
                     pest_disease_infestation=sample_data.get('pest_disease_infestation'),
                     slope=sample_data.get('slope'),
 
-                    fertilizer_type=self.get_object(fertilizer_type=fertilizer_type, variety=variety, stage=stage),
+                    fertilizer_plan=self.get_object(fertilizer_type=fertilizer_type, variety=variety, stage=stage),
                     dose=sample_data.get('fertilizer_plan'),
                     top_probabilities=top_probabilities,
                     user=request.user,
