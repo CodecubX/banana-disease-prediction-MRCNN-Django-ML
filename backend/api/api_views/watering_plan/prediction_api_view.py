@@ -91,9 +91,9 @@ class WateringPlanAPIView(APIView):
         try:
             variety = Variety.objects.get(id=variety)
             # retrieve watering plan
-            watering_plan = WateringPlan.objects.filter(watering_plan=prediction, variety=variety, stage=stage)
+            watering_plan = self.get_object(watering_plan=prediction, variety=variety, stage=stage)
 
-            serializer = self.serializer_class(watering_plan, many=True)
+            serializer = self.serializer_class(watering_plan)
 
             # add watering plan to response data
             context['watering_plan'] = serializer.data
