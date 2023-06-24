@@ -31,7 +31,7 @@ class FertilizerPlanPrediction(models.Model):
 
     # fields from models
     fertilizer_type = models.ForeignKey(FertilizerPlan, on_delete=models.DO_NOTHING, null=False, blank=False)
-    fertilizer_plan = models.CharField(max_length=255, null=False, blank=False)
+    dose = models.CharField(max_length=255, null=False, blank=False)
 
     top_probabilities = models.JSONField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
@@ -39,4 +39,4 @@ class FertilizerPlanPrediction(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.fertilizer_plan
+        return f'{self.fertilizer_type.get_fertilizer_type_display()} - {self.dose}'

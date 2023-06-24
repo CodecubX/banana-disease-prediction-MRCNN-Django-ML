@@ -52,5 +52,5 @@ def get_top_predictions(probabilities, n=3):
         top_predictions = get_top_predictions(top_probabilities, n=3)
     """
     sorted_probabilities = sorted(probabilities.items(), key=lambda x: float(x[1]), reverse=True)[:n]
-    formatted_predictions = [{"plan": key, "probability": value} for key, value in sorted_probabilities]
+    formatted_predictions = [{"dose": key, "probability": value} for key, value in sorted_probabilities]
     return formatted_predictions

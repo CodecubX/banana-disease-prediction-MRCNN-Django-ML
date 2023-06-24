@@ -98,7 +98,7 @@ class FertilizerPlanAPIView(APIView):
         top_probabilities = get_top_predictions(probabilities)
 
         context = {
-            'prediction': fertilizer_plan,
+            'dose': fertilizer_plan,
             'top_probabilities': top_probabilities
         }
 
@@ -142,7 +142,7 @@ class FertilizerPlanAPIView(APIView):
                     slope=sample_data.get('slope'),
 
                     fertilizer_type=self.get_object(fertilizer_type=fertilizer_type, variety=variety, stage=stage),
-                    fertilizer_plan=sample_data.get('fertilizer_plan'),
+                    dose=sample_data.get('fertilizer_plan'),
                     top_probabilities=top_probabilities,
                     user=request.user,
 
