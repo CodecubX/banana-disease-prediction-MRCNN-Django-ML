@@ -20,13 +20,16 @@ class ChatBotAPIView(APIView):
         Returns:
             Response: The HTTP response containing the prediction results and other data.
         """
-
+        # ! TODO add validations and separate method
+        # data from url query params
+        language = request.query_params.get('language')
         # post data
         msg = request.data.get('msg')
         is_identification = request.data.get('is_identification')
 
         context = {
             'response': msg,
-            'is_identification': is_identification
+            'is_identification': is_identification,
+            'language': language,
         }
         return Response(context, status=status.HTTP_200_OK)
