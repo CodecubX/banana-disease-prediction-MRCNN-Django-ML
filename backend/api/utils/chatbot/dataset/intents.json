@@ -159,7 +159,7 @@
       ]
     },
     {
-      "tag": "Identify_diseases_by_symptoms",
+      "tag": "identify_diseases_by_symptoms",
       "patterns": [
         "Identify diseases",
         "Can you identify banana diseases",
