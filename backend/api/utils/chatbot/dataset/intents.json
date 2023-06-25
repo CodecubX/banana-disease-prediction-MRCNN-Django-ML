@@ -13,16 +13,9 @@
         "Hi, how's it going?",
         "Hello, nice to meet you",
         "Hey, what's up?",
-        "Hi, how can I help you?",
-        "Hey there, how can I assist you today?",
-        "Hello, how may I be of service?",
-        "Good day, how can I support you?",
-        "Hi, what brings you here today?",
-        "Hey, nice to see you. How can I assist you?",
+        "Hey, nice to see you",
         "Hello, how's your day going?",
-        "Hi, how's everything?",
-        "Hey, how can I make your day better?",
-        "Hello, how can I make your experience great?"
+        "Hi, how's everything?"
       ],
       "responses": [
         "Hello! How can I assist you today?",
@@ -86,7 +79,13 @@
         "What can I expect from you?",
         "How can you be of service?",
         "What do you specialize in?",
-        "What kind of help do you provide?"
+        "What kind of help do you provide?",
+        "Hey, how can you make my day better?",
+        "Hello, how can you make my experience great?",
+        "Good day, how can you support me?",
+        "Hi, how can you help me?",
+        "Hey there, how can you assist me today?",
+        "Hello, how you be of service?"
       ],
       "responses": [
         "I can guide you through banana diseases, disease identification, and resolution",

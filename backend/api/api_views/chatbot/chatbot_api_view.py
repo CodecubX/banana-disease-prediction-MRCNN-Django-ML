@@ -39,5 +39,6 @@ class ChatBotAPIView(APIView):
             'response': response,
             'is_identification': is_identification,
             'language': language,
+            'tag': tag
         }
         return Response(context, status=status.HTTP_200_OK)
