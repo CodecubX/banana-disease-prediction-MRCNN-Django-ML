@@ -107,7 +107,7 @@ class FertilizerPlanAPIView(APIView):
             print(f'INFO: Variety: {variety.variety}')
             # retrieve fertilizer plans
             fertilizer_plan = self.get_object(fertilizer_type=fertilizer_type,  variety=variety, stage=stage)
-            print(fertilizer_plan.stage)
+            print(f'INFO: {fertilizer_plan.get_stage_display()}')
 
             serializer = self.serializer_class(fertilizer_plan)
 
