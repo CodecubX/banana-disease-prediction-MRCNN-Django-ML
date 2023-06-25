@@ -1,3 +1,4 @@
+from .dynamic_serializer import *
 from .disease import *
 from .harvest import *
 from .user_serializer import *

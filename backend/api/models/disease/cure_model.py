@@ -7,7 +7,9 @@ class Cure(models.Model):
     """ Holds Cure data """
 
     name = models.CharField(max_length=100, null=False, blank=False)
+    name_sinhala = models.CharField(max_length=100, null=False, blank=False)
     description = models.TextField()
+    description_sinhala = models.TextField()
 
     img = models.ImageField(upload_to='cure/', max_length=500, null=True, blank=True)
 
