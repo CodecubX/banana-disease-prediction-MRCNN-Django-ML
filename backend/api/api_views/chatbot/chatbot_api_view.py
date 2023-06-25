@@ -29,10 +29,14 @@ class ChatBotAPIView(APIView):
         """
         msg, is_identification, language = build_model_data(request.data, request.query_params)
 
-        pred = self.model.get_predictions(msg)
+        intent_predictions = self.model.get_predictions(msg)
+
+        tag = intent_predictions[0]['intent']
+
+        response = self.model.get_response(tag)
 
         context = {
-            'response': pred,
+            'response': response,
             'is_identification': is_identification,
             'language': language,
         }

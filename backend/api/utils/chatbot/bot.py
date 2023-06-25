@@ -297,3 +297,11 @@ class ChatBot:
                 }
             )
         return return_list
+
+    def get_response(self, tag):
+        """ returns random response according to intent"""
+        for intent in self.intents['intents']:
+            if intent['tag'] == tag:
+                responses = intent['responses']
+        response = random.choice(responses)
+        return response
