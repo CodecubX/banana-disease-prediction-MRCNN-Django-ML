@@ -8,5 +8,6 @@ from api.serializers import DiseaseSerializer
 class DiseaseAPIView( ListAPIView, RetrieveAPIView):
     """ Handles retrieving all Diseases and one particular Disease by Id """
 
+    permission_classes = [permissions.IsAuthenticated]
     queryset = Disease.objects.all()
     serializer_class = DiseaseSerializer

@@ -34,11 +34,8 @@ class ChatBotAPIView(APIView):
         tag = intent_predictions[0]['intent']
 
         response = ''
-        if tag == 'banana_disease_info':
-            pass
-        elif tag == 'management_strategies':
-            pass
-        elif tag == 'identify_diseases_by_symptoms':
+
+        if tag == 'identify_diseases_by_symptoms':
             pass
         else:
             response = self.model.get_response(tag)
