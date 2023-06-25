@@ -2,7 +2,7 @@ from rest_framework.generics import ListAPIView
 from rest_framework import permissions
 
 from api.models import Cure
-from api.serializers import CureSerializer
+from api.serializers import CureSerializer, CureSinhalaSerializer
 
 
 class CureAPIView(ListAPIView):
@@ -15,3 +15,11 @@ class CureAPIView(ListAPIView):
         disease_id = self.kwargs.get('disease_id')
         queryset = Cure.objects.filter(disease_id=disease_id)
         return queryset
+
+    def get_serializer_class(self):
+        language = self.request.query_params.get('language', None)
+
+        if language == 'si':
+            return CureSinhalaSerializer
+
+        return CureSerializer
