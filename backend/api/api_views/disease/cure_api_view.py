@@ -1,4 +1,4 @@
-from rest_framework.generics import RetrieveAPIView, ListAPIView
+from rest_framework.generics import ListAPIView
 from rest_framework import permissions
 
 from api.models import Cure
