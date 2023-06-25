@@ -27,7 +27,7 @@ class ChatBotAPIView(APIView):
         Returns:
             Response: The HTTP response containing the prediction results and other data.
         """
-        msg, language = build_model_data(request.data, request.query_params)
+        msg, tag, language = build_model_data(request.data, request.query_params)
 
         intent_predictions = self.model.get_predictions(msg)
 
