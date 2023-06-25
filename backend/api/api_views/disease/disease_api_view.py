@@ -18,3 +18,11 @@ class DiseaseAPIView(ListAPIView, RetrieveAPIView):
             return DiseaseSinhalaSerializer
 
         return DiseaseSerializer
+
+    def get(self, request, *args, **kwargs):
+        if 'pk' in kwargs:
+            # Retrieve a specific object by ID
+            return self.retrieve(request, *args, **kwargs)
+        else:
+            # Get all objects
+            return self.list(request, *args, **kwargs)
