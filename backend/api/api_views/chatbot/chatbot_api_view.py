@@ -33,6 +33,7 @@ class ChatBotAPIView(APIView):
 
         tag = intent_predictions[0]['intent']
 
+        response = ''
         if tag == 'banana_disease_info':
             pass
         elif tag == 'management_strategies':
