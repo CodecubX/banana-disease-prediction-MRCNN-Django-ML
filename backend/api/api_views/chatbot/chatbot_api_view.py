@@ -27,7 +27,7 @@ class ChatBotAPIView(APIView):
         Returns:
             Response: The HTTP response containing the prediction results and other data.
         """
-        msg, is_identification, language = build_model_data(request.data, request.query_params)
+        msg, language = build_model_data(request.data, request.query_params)
 
         intent_predictions = self.model.get_predictions(msg)
 
@@ -39,12 +39,11 @@ class ChatBotAPIView(APIView):
             pass
         elif tag == 'identify_diseases_by_symptoms':
             pass
-
-        response = self.model.get_response(tag)
+        else:
+            response = self.model.get_response(tag)
 
         context = {
             'response': response,
-            'is_identification': is_identification,
             'language': language,
             'tag': tag
         }
