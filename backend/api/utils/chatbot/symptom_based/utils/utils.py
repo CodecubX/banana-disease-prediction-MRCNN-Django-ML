@@ -7,24 +7,24 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # nltk.download('wordnet')
 
 
-def preprocess_text(text, language='english'):
+def preprocess_text(text, language='en'):
     """
     Preprocesses text by removing punctuation, converting to lowercase, and removing extra white spaces.
     Parameters:
         text (str): The text to preprocess.
-        language (str): The language of the text. Valid values are 'sinhala' and 'english'.
+        language (str): The language of the text. Valid values are 'si' and 'en'.
     Returns:
         str: The preprocessed text.
     """
     try:
         # Validate the language parameter
-        if language not in ['sinhala', 'english']:
-            raise ValueError("Invalid language parameter. Must be 'sinhala' or 'english'.")
+        if language not in ['si', 'en']:
+            raise ValueError("Invalid language parameter. Must be 'si' or 'en'.")
 
         # Remove punctuation
         text = re.sub(r'[^\w\s]', '', text)
 
-        if language == 'english':
+        if language == 'en':
             # Convert to lowercase
             text = text.lower()
 
@@ -37,25 +37,25 @@ def preprocess_text(text, language='english'):
         raise ValueError("Error preprocessing text: " + str(e))
 
 
-def tokenize_text(text, language='english'):
+def tokenize_text(text, language='en'):
     """
     Tokenizes text by splitting it into individual words and lemmatizes the tokens.
-    Lemmatization only done for english texts
+    Lemmatization only done for en texts
     Parameters:
         text (str): The text to tokenize.
-        language (str): The language of the text. Valid values are 'sinhala' and 'english'.
+        language (str): The language of the text. Valid values are 'si' and 'en'.
     Returns:
         list: A list of tokens.
     """
     try:
         # Validate the language parameter
-        if language not in ['sinhala', 'english']:
-            raise ValueError("Invalid language parameter. Must be 'sinhala' or 'english'.")
+        if language not in ['si', 'en']:
+            raise ValueError("Invalid language parameter. Must be 'si' or 'en'.")
 
         # Tokenize the text using NLTK
         tokens = word_tokenize(text)
 
-        if language == 'english':
+        if language == 'en':
             # Lemmatize the tokens using NLTK's WordNetLemmatizer
             lemmatizer = WordNetLemmatizer()
             # lemmatized tokens
@@ -67,22 +67,22 @@ def tokenize_text(text, language='english'):
         raise ValueError("Error tokenizing text: " + str(e))
 
 
-def calculate_tfidf_scores(df, symptom, language='english'):
+def calculate_tfidf_scores(df, symptom, language='en'):
     """
     Calculates the TF-IDF scores for a list of disease descriptions and a symptom.
     Parameters:
         df (pd.DataFrame): A dataframe of disease/pest, descriptions to compare the symptom against.
         symptom (str): The symptom to calculate the TF-IDF scores for.
-        language (str): The language of the text. Valid values are 'sinhala' and 'english'.
+        language (str): The language of the text. Valid values are 'si' and 'en'.
     Returns:
         list: A list of tuples, where each tuple contains the disease/pest and its corresponding TF-IDF score.
     """
     try:
         # Validate the language parameter
-        if language not in ['sinhala', 'english']:
-            raise ValueError("Invalid language parameter. Must be 'sinhala' or 'english'.")
+        if language not in ['si', 'en']:
+            raise ValueError("Invalid language parameter. Must be 'si' or 'en'.")
 
-        disease_descriptions = df["Description"].tolist()
+        disease_descriptions = df['Description'].tolist()
         # Preprocess the symptom
         symptom = preprocess_text(symptom, language)
 
@@ -101,7 +101,7 @@ def calculate_tfidf_scores(df, symptom, language='english'):
         all_strings = [' '.join(tokens) for tokens in all_tokens]
 
         # Calculate the TF-IDF scores
-        if language == 'english':
+        if language == 'en':
             tfidf_vectorizer = TfidfVectorizer(stop_words='english')
         else:
             tfidf_vectorizer = TfidfVectorizer()

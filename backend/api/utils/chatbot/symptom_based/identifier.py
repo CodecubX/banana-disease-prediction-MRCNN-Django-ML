@@ -1,7 +1,7 @@
 from .utils.utils import calculate_tfidf_scores
 
 
-def find_top_k_diseases(symptoms, df, k=None, language='english', verbose=True):
+def find_top_k_diseases(symptoms, df, k=None, language='en', verbose=True):
     """
     Finds the top k diseases/pests from the given dataset that match the given symptoms based on their TF-IDF scores.
 
@@ -16,8 +16,8 @@ def find_top_k_diseases(symptoms, df, k=None, language='english', verbose=True):
     """
 
     # Validate the language parameter
-    if language not in ['sinhala', 'english']:
-        raise ValueError("Invalid language parameter. Must be 'sinhala' or 'english'.")
+    if language not in ['si', 'en']:
+        raise ValueError("Invalid language parameter. Must be Sinhala(si) or English(en)")
 
     # Calculate the TF-IDF scores
     scores = calculate_tfidf_scores(df, symptoms, language)
@@ -26,5 +26,5 @@ def find_top_k_diseases(symptoms, df, k=None, language='english', verbose=True):
         # Print all diseases/pests with the scores
         for disease, score in scores:
             print(disease, score)
-
+    print('X: ', scores[:k])
     return scores[:k]
