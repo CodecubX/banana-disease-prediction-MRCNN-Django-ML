@@ -182,7 +182,11 @@
         "What are the visible manifestations of diseases in banana plants?",
         "Tell me about the external clues that suggest a disease in banana cultivation"
       ],
-      "responses": []
+      "responses": [
+        "Can you explain me the symptoms?",
+        "Describe what you see in the plant",
+        "Tell me more about the symptoms"
+      ]
     },
     {
       "tag": "noanswer",
