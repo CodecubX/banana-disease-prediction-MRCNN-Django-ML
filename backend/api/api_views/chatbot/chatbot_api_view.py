@@ -48,7 +48,7 @@ class ChatBotAPIView(APIView):
             tag = intent_predictions[0]['intent']
             response = self.model.get_response(tag)
 
-            context['response'] = response,
+            context['response'] = response
             context['tag'] = tag
 
             # returns response and all diseases in the db for the dropdown
@@ -76,14 +76,17 @@ class ChatBotAPIView(APIView):
                 )
                 print(f'INFO: Predicted Diseases: {predicted_diseases}')
                 # ! TODO improve following
-                response = []
+                diseases = []
 
                 for disease in predicted_diseases:
+                    disease_name = disease[0]
+                    obj = Disease.objects.get(name=disease_name)
                     payload = {
-                        'disease_name': disease[0],
+                        'id': obj.id,
+                        'name': obj.get_name_display(),
                         'confidence': disease[1]
                     }
-                    response.append(payload)
+                    diseases.append(payload)
 
-                context['response'] = response
+                context['response'] = 'Those are the diseases that fits the description'
         return Response(context, status=status.HTTP_200_OK)
