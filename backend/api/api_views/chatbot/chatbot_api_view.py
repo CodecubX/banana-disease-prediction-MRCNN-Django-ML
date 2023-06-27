@@ -88,5 +88,7 @@ class ChatBotAPIView(APIView):
                     }
                     diseases.append(payload)
 
+                context['diseases'] = diseases
                 context['response'] = 'Those are the diseases that fits the description'
+
         return Response(context, status=status.HTTP_200_OK)
