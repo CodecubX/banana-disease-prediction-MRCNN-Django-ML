@@ -83,7 +83,7 @@ class ChatBotAPIView(APIView):
                     obj = Disease.objects.get(name=disease_name)
                     payload = {
                         'id': obj.id,
-                        'display_name': obj.get_name_display(),
+                        'name_display': obj.get_name_display(),
                         'confidence': disease[1]
                     }
                     diseases.append(payload)
