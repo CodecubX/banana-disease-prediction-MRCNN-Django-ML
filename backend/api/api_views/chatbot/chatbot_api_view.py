@@ -6,7 +6,7 @@ from rest_framework.response import Response
 
 from api.models import Disease
 
-from api.serializers import DiseaseSinhalaSerializer
+from api.serializers import DiseaseSerializer
 
 from api.utils import ChatBot
 from api.utils.chatbot import symptom_based
@@ -17,10 +17,6 @@ class ChatBotAPIView(APIView):
     """ Handles chatbot related operations"""
 
     permission_classes = [permissions.IsAuthenticated]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.model = ChatBot()  # Initialize the ChatBot instance specific to each ChatBotAPIView instance
 
     def post(self, request, *args, **kwargs):
         """
@@ -36,6 +32,8 @@ class ChatBotAPIView(APIView):
         """
         msg, tag_from_req, language = build_model_data(request.data, request.query_params)
 
+        model = ChatBot(language=language, mode='development')
+
         context = {
             'response': '',
             'language': language,
@@ -43,10 +41,10 @@ class ChatBotAPIView(APIView):
         }
 
         if tag_from_req != 'identify_diseases_by_symptoms':
-            intent_predictions = self.model.get_predictions(msg)
+            intent_predictions = model.get_predictions(msg)
 
             tag = intent_predictions[0]['intent']
-            response = self.model.get_response(tag)
+            response = model.get_response(tag)
 
             context['response'] = response
             context['tag'] = tag
@@ -54,13 +52,14 @@ class ChatBotAPIView(APIView):
             # returns response and all diseases in the db for the dropdown
             if tag == 'banana_disease_info' or tag == 'management_strategies':
                 diseases = Disease.objects.all()
-                serializer = DiseaseSinhalaSerializer(
+
+                serializer = DiseaseSerializer(
                     diseases,
                     fields=['id', 'name', 'name_display'],
                     many=True
                 )
                 context['diseases'] = serializer.data
-        # if tag_from_req == 'identify_diseases_by_symptoms'
+
         else:
             if language == 'en':
                 disease_data = Disease.objects.values('name', 'symptom_description')

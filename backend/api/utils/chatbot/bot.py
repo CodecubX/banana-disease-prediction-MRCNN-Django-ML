@@ -55,14 +55,20 @@ class ChatBot:
             json_file (str): The path to the JSON file containing the intents. Default is './dataset/intents.json'.
             mode (str): The running mode of the chatbot. Default is 'development'.
         """
-        json_file_path = f'{DATASET_DIR}{json_file}'
+        # ! TODO fix this
+        if language == 'en':
+            language = 'english'
+        else:
+            language = 'sinhala'
+
+        self.language = language
+        json_file_path = f'{DATASET_DIR}intents_{self.language}.json'
         self.intents = json.loads(open(json_file_path, encoding='utf-8').read())
         self.lemmatizer = WordNetLemmatizer()
         self.stemmer = SnowballStemmer(language='english')
         self.all_words = []
         self.classes = []
         self.dataset = []
-        self.language = language
         self.mode = mode  # development or production mode
         self.model_path = f'{MODEL_DIR}chat_bot_model_{self.language}'
         self.helper_file_path = HELPER_DIR
