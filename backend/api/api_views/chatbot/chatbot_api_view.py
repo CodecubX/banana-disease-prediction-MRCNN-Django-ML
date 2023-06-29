@@ -46,6 +46,10 @@ class ChatBotAPIView(APIView):
             tag = intent_predictions[0]['intent']
             response = model.get_response(tag)
 
+            if language == 'si':
+                # encode the Sinhala text using UTF-8 encoding
+                response = response.encode('utf-8')
+
             context['response'] = response
             context['tag'] = tag
 
