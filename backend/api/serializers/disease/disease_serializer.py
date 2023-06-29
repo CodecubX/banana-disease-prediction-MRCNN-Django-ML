@@ -4,7 +4,7 @@ from api.models import Disease
 from api.serializers import DynamicFieldsModelSerializer
 
 
-class DiseaseSerializer(serializers.ModelSerializer):
+class DiseaseSerializer(DynamicFieldsModelSerializer):
     """ Serializes the Disease model objects """
 
     name_display = serializers.CharField(source='get_name_display', read_only=True)
