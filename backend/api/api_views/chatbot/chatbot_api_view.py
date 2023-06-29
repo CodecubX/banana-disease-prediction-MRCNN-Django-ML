@@ -94,4 +94,4 @@ class ChatBotAPIView(APIView):
                 context['diseases'] = diseases
                 context['response'] = 'Those are the diseases that fits the description'
 
-        return Response(context, status=status.HTTP_200_OK)
+        return Response(context, status=status.HTTP_200_OK, content_type='text/plain; charset=utf-8')
