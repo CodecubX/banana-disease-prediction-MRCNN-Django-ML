@@ -2,7 +2,7 @@ from django.urls import path
 from .api_views import CreateAccount, UserAPIView, HarvestPredictionAPIView, TestAPIView, VarietyListAPIView, \
    VarietyRetrieveAPIView, HarvestPredictionHistoryAPIView, BananaDiseaseMRCNNAPIView, DiseaseAndCureAPIView, \
    DiseasePredictionHistoryAPIView, WateringPlanAPIView, WateringPlanPredictionHistoryAPIView, FertilizerPlanAPIView, \
-   FertilizerPlanPredictionHistoryAPIView, ChatBotAPIView, DiseaseAPIView, CureAPIView
+   FertilizerPlanPredictionHistoryAPIView, ChatBotAPIView, DiseaseAPIView, CureAPIView, DiseaseQuestionnaireAPIView
 
 app_name = 'api'
 
@@ -37,6 +37,7 @@ urlpatterns = [
 
    # chatbot related paths
    path('chatbot', ChatBotAPIView.as_view(), name='chatbot'),
+   path('disease/questionnaire', DiseaseQuestionnaireAPIView.as_view(), name='disease_questionnaire'),
 
    # --- for testing --
    path('tests', TestAPIView.as_view(), name='test')

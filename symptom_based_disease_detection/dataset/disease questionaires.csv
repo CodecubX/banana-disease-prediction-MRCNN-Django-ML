@@ -15,7 +15,6 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
 Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
 Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
@@ -32,7 +31,6 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
 Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
 Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
@@ -49,7 +47,6 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
 Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
 Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
@@ -66,7 +63,6 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
 Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
 Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
@@ -83,7 +79,6 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
 Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
 Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
@@ -100,7 +95,6 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
 Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
 Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
@@ -117,7 +111,6 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-Leaf Color,Leaf Spots,Leaf Wilting,Leaf Curling,Stunted Growth,Stem Color,Root Rot,Abnormal Fruiting,Presence of Pests,Disease/Deficiency
 Yellow,Brown,Yes,No,Slow Growth,Brown,Yes,Normal,Aphids,Banana Bunchy Top
 Brown,Black,No,Yes,Slow Growth,Black,No,Normal,None,Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Nutrient Deficiency
@@ -134,6 +127,3 @@ Yellow,None,Yes,Yes,Slow Growth,Brown,No,Normal,None,Potassium Deficiency
 Brown,Brown,No,Yes,Slow Growth,Red,Yes,Distorted,Aphids,Banana Fusarium Wilt
 Pale Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
 Dark Green,None,No,No,Normal,Yellow,No,Normal,None,Iron Deficiency
-
-
-

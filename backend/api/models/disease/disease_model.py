@@ -9,6 +9,21 @@ class Disease(models.Model):
         ('healthy', 'Healthy'),
         ('yellow_leaf', 'Yellow Leaf'),
         ('anthracnose', 'Anthracnose'),
+        ('Banana Bunchy Top', 'Banana Bunchy Top'),
+        ('Fusarium Wilt', 'Fusarium Wilt'),
+        ('Nutrient Deficiency', 'Nutrient Deficiency'),
+        ('Black Sigatoka', 'Black Sigatoka'),
+        ('Nitrogen Deficiency', 'Nitrogen Deficiency'),
+        ('Banana Mosaic', 'Banana Mosaic'),
+        ('Magnesium Deficiency', 'Magnesium Deficiency'),
+        ('Bacterial Wilt', 'Bacterial Wilt'),
+        ('Yellow Sigatoka', 'Yellow Sigatoka'),
+        ('Zinc Deficiency', 'Zinc Deficiency'),
+        ('Phosphorus Deficiency', 'Phosphorus Deficiency'),
+        ('Banana Streak Virus', 'Banana Streak Virus'),
+        ('Potassium Deficiency', 'Potassium Deficiency'),
+        ('Banana Fusarium Wilt', 'Banana Fusarium Wilt'),
+        ('Iron Deficiency', 'Iron Deficiency'),
     ]
 
     name = models.CharField(choices=name_choices, max_length=200, null=False, blank=False, unique=True)
