@@ -26,7 +26,7 @@ class DiseaseQuestionnaireAPIView(APIView):
         serializer_class = self.get_serializer_class()
 
         data = request.data
-        language = self.request.query_params.get('language', 'en')
+        language = request.query_params.get('language', 'en')
         sample_data = build_questionnaire_model_data(data)
 
         try:
