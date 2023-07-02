@@ -36,5 +36,8 @@ class ChatBotAPIView(APIView):
             'language': language,
             'tag': tag_from_req
         }
-        context = handle_chatbot_response(tag_from_req, msg, model, context, language='en')
-        return Response(context, status=status.HTTP_200_OK, content_type='text/plain; charset=utf-8')
+        context = handle_chatbot_response(tag_from_req, msg, model, context, language=language)
+        if language == 'si':
+            return Response(context, status=status.HTTP_200_OK, content_type='text/plain; charset=utf-8')
+        return Response(context, status=status.HTTP_200_OK)
+
