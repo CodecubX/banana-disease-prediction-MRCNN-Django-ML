@@ -42,7 +42,7 @@ class DiseaseQuestionnaireAPIView(APIView):
 
         try:
             disease = Disease.objects.get(name=top_prediction)
-            serializer = serializer_class(disease)
+            serializer = serializer_class(disease, context={'request': request})
             context['disease'] = serializer.data
         except Disease.DoesNotExist:
             context['disease'] = None
