@@ -28,7 +28,7 @@ class DiseaseAPIView(APIView):
             # Retrieve a specific object by ID
             try:
                 disease = Disease.objects.get(id=disease_id)
-                serializer = serializer_class(disease)
+                serializer = serializer_class(disease, context={'request': request})
             except Disease.DoesNotExist:
                 return Response({'error': 'Disease not found'}, status=status.HTTP_404_NOT_FOUND)
         else:

@@ -16,6 +16,11 @@ class CureAPIView(ListAPIView):
         queryset = Cure.objects.filter(disease_id=disease_id)
         return queryset
 
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context
+
     def get_serializer_class(self):
         language = self.request.query_params.get('language', None)
 
