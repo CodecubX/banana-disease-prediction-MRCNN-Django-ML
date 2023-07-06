@@ -237,7 +237,11 @@
         "What are the visible manifestations or external clues that indicate a disease in banana cultivation?",
         "I need information on how to recognize diseases in my banana crops based on their external symptoms."
       ],
-      "responses": []
+      "responses": [
+        "Can you explain the symptoms?",
+        "Explain the symptoms, please",
+        "Tell more about the symptoms"
+      ]
     },
     {
       "tag": "noanswer",
