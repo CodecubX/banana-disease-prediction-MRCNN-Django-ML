@@ -13,9 +13,25 @@
         "Hi, how's it going?",
         "Hello, nice to meet you",
         "Hey, what's up?",
-        "Hey, nice to see you",
+        "Hi, how can I help you?",
+        "Hey there, how can I assist you today?",
+        "Hey, is there anything I can help you with?",
+        "Hi, is there anything I can do for you?",
+        "Hello, how may I be of service?",
+        "Good day, how can I support you?",
+        "Hi, what brings you here today?",
+        "Hey, nice to see you. How can I assist you?",
+        "Is there anything I can assist you with?",
         "Hello, how's your day going?",
-        "Hi, how's everything?"
+        "Hi, how's everything?",
+        "Hey, how can I make your day better?",
+        "Hello, how can I make your experience great?",
+        "Greetings, how may I assist you today?",
+        "Hi there, welcome! How can I assist you in achieving your goals?",
+        "Hello! How may I be of service to you today?",
+        "Greetings, How can I lend a hand to make your day easier?",
+        "Greetings! Is there anything specific you need help with?",
+        "Hi, welcome! How can I make your day a little brighter?"
       ],
       "responses": [
         "Hello! How can I assist you today?",
@@ -46,7 +62,12 @@
         "Goodnight",
         "Have a good one",
         "See you tomorrow",
-        "Stay safe"
+        "Stay safe",
+        "Have a wonderful day",
+        "Have a fantastic day",
+        "Take care of yourself",
+        "Fantastic day ahead",
+        "Bye for now"
       ],
       "responses": [
         "Goodbye! Have a great day!",
@@ -80,12 +101,16 @@
         "How can you be of service?",
         "What do you specialize in?",
         "What kind of help do you provide?",
-        "Hey, how can you make my day better?",
-        "Hello, how can you make my experience great?",
-        "Good day, how can you support me?",
-        "Hi, how can you help me?",
-        "Hey there, how can you assist me today?",
-        "Hello, how you be of service?"
+        "In what ways can you support me?",
+        "What kind of solutions can you offer?",
+        "How can you lend a hand in my situation?",
+        "Tell me about the range of help you provide.",
+        "What specific expertise do you bring to the table?",
+        "How can you assist me in achieving my goals?",
+        "What specific problems are within your capabilities to solve?",
+        "Can you guide me through certain processes?",
+        "What knowledge and skills do you possess that can benefit me?",
+        "What can I expect in terms of support and assistance from you?"
       ],
       "responses": [
         "I can guide you through banana diseases, disease identification, and resolution",
@@ -94,9 +119,7 @@
         "I'm here to help you with any questions or issues related to banana diseases and their management",
         "I offer guidance and assistance regarding banana diseases, disease identification, and resolution"
       ],
-      "context": [
-        ""
-      ]
+      "context": [""]
     },
     {
       "tag": "banana_disease_info",
@@ -120,12 +143,23 @@
         "Inform me about diseases that commonly affect bananas",
         "What diseases should I be concerned about in banana cultivation?",
         "I want to learn about diseases that can damage banana plants",
-        "Tell me about diseases that can cause harm to banana crops"
+        "Tell me about diseases that can cause harm to banana crops",
+        "Say the diseases that can cause harm to banana crops",
+        "Please provide information on common diseases that affect banana plants.",
+        "What are the major diseases that can impact banana crops?",
+        "Can you give me an overview of diseases commonly found in banana cultivation?",
+        "I would like to know about the diseases that can cause harm to banana plants.",
+        "Tell me about the specific diseases that affect bananas and can damage the crops.",
+        "What diseases should I be aware of in banana farming that can impact my plants?",
+        "Provide details about the diseases that commonly affect bananas and their impact.",
+        "Which diseases are prevalent in banana cultivation and can be harmful to the crops?",
+        "Inform me about the common diseases found in banana cultivation and their consequences.",
+        "What should I know about diseases in banana cultivation that can potentially damage the plants?"
       ],
       "responses": [
-        "Here are the diseases in my database",
+        "Here are the banana diseases in my database",
         "Please select the disease",
-        "Following are the bad boys I know of"
+        "Let me provide information about the selected disease"
       ]
     },
     {
@@ -150,7 +184,18 @@
         "What are the effective techniques for disease management in bananas?",
         "I want to learn about disease control methods in banana farming",
         "What are the recommended approaches for managing diseases in banana crops?",
-        "Can you suggest ways to control diseases in banana cultivation?"
+        "Can you suggest ways to control diseases in banana cultivation?",
+        "What are the effective management strategies for controlling diseases in banana cultivation?",
+        "Give me tips on how to effectively manage banana diseases in my crop.",
+        "How can I protect my banana plants from diseases? Provide me with some management techniques.",
+        "Tell me about the recommended practices for disease management in banana farming.",
+        "What steps should I take to prevent diseases and ensure the health of my banana plants?",
+        "Can you provide advice on effective disease management in banana cultivation?",
+        "What are the best practices for controlling diseases in banana plants? Share some strategies.",
+        "Give me some insights into preventing and controlling diseases in bananas. What measures should I adopt?",
+        "How can I ensure the overall health of my banana crop and minimize diseases? Provide guidance.",
+        "What are the recommended approaches for managing diseases in banana crops? Suggest some strategies.",
+        "Please provide some tips for managing banana diseases"
       ],
       "responses": [
         "You should tell me about the disease",
@@ -180,13 +225,19 @@
         "Can you describe the external symptoms of diseases in banana cultivation?",
         "I need information on recognizing diseases in banana crops",
         "What are the visible manifestations of diseases in banana plants?",
-        "Tell me about the external clues that suggest a disease in banana cultivation"
+        "Tell me about the external clues that suggest a disease in banana cultivation",
+        "Can you help me identify banana diseases based on the symptoms I observe?",
+        "What are the visual cues or symptoms that can help me identify diseases in banana plants?",
+        "I need assistance in recognizing banana diseases. Can you provide a guide based on symptoms?",
+        "What signs should I look for to identify diseases in my banana crops?",
+        "How can I differentiate between different diseases in banana plants based on their symptoms?",
+        "What are the common symptoms or visual indicators of diseases in banana cultivation?",
+        "Can you describe the external symptoms that suggest a disease in banana plants?",
+        "Tell me about the telltale signs of diseases in banana farming that I should be aware of.",
+        "What are the visible manifestations or external clues that indicate a disease in banana cultivation?",
+        "I need information on how to recognize diseases in my banana crops based on their external symptoms."
       ],
-      "responses": [
-        "Can you explain me the symptoms?",
-        "Describe what you see in the plant",
-        "Tell me more about the symptoms"
-      ]
+      "responses": []
     },
     {
       "tag": "noanswer",
@@ -194,7 +245,16 @@
         " ",
         "",
         " .",
-        "    "
+        "    ",
+        " ,",
+        " '",
+        " ;",
+        "     ",
+        ".",
+        ",",
+        "'",
+        ";",
+        "..."
       ],
       "responses": [
         "Sorry, I can't understand you. Could you please provide more information?",
@@ -202,9 +262,7 @@
         "I'm not sure I understand what you're asking. Can you please clarify?",
         "Apologies, but I couldn't comprehend your message. Can you please provide more context or rephrase?"
       ],
-      "context": [
-        ""
-      ]
+      "context": [""]
     },
     {
       "tag": "thank_you",
@@ -228,7 +286,27 @@
         "You're amazing, thank you",
         "I want to express my gratitude",
         "Thank you for being here",
-        "I want to show my appreciation"
+        "I want to show my appreciation",
+        "Thank you kindly.",
+        "Thanks a bunch.",
+        "I really appreciate it.",
+        "Thank you for your support.",
+        "I'm grateful for your assistance.",
+        "Many thanks for your help.",
+        "I'm so thankful for your guidance.",
+        "Thank you for going above and beyond.",
+        "I want to express my heartfelt thanks.",
+        "Thank you for being so responsive.",
+        "I can't thank you enough.",
+        "I'm truly grateful for your time and effort.",
+        "You've been incredibly helpful, thank you.",
+        "I'm thankful for your prompt attention to this matter.",
+        "Thank you for your invaluable contribution.",
+        "I'm deeply appreciative of your support.",
+        "You've made a significant difference, thank you.",
+        "Thank you for your patience and understanding.",
+        "I'm sincerely grateful for your dedication.",
+        "Thank you for always being there when I needed assistance."
       ],
       "responses": [
         "You're welcome! If you have any more questions, feel free to ask.",

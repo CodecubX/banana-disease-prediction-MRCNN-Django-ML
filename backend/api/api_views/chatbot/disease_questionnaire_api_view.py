@@ -4,7 +4,7 @@ from rest_framework.response import Response
 
 from api.models import Disease
 from api.serializers import DiseaseCureSerializer, DiseaseCureSinhalaSerializer
-from api.utils.chatbot.questionnaore_based.predictor import predict_disease
+from api.utils.chatbot.questionnaire_based.predictor import predict_disease
 from .utils.utils import build_questionnaire_model_data
 
 
