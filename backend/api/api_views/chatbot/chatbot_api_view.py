@@ -40,6 +40,7 @@ class ChatBotAPIView(APIView):
         try:
             context = handle_chatbot_response(tag_from_req, msg, model, context, language=language)
         except IndexError:
+            print(f'ERROR: Responses empty in intents')
             return Response({'error': 'Chat bot responses not found'}, status=status.HTTP_409_CONFLICT)
         if language == 'si':
             return Response(context, status=status.HTTP_200_OK, content_type='text/plain; charset=utf-8')
