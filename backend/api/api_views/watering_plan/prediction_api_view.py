@@ -139,7 +139,7 @@ class WateringPlanAPIView(APIView):
         except WateringPlan.DoesNotExist:
             error = "Failed to save record to history. Watering Plan does not exists in database"
 
-            context['watering_plan'] = []
+            context['watering_plan'] = None
             context['error'] = error
 
         return Response(context, status=status.HTTP_200_OK)

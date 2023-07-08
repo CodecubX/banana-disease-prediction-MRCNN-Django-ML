@@ -159,7 +159,7 @@ class FertilizerPlanAPIView(APIView):
         except FertilizerPlan.DoesNotExist:
             error = "Failed to save record to history. Fertilizer Plan does not exists in database"
 
-            context['fertilizer_plan'] = []
+            context['fertilizer_plan'] = None
             context['error'] = error
 
         return Response(context, status=status.HTTP_200_OK)
