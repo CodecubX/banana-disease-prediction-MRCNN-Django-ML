@@ -22,4 +22,4 @@ class FertilizerPlan(AbstractBananaPlant):
         unique_together = ('variety', 'stage', 'fertilizer_type')
 
     def __str__(self):
-        return self.get_fertilizer_type_display()
+        return f'{self.get_fertilizer_type_display()}: {self.stage} | {self.fertilizer_type}'
