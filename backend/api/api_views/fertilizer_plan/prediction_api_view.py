@@ -146,7 +146,6 @@ class FertilizerPlanAPIView(APIView):
                     dose=sample_data.get('fertilizer_plan'),
                     top_probabilities=top_probabilities,
                     user=request.user,
-
                 )
 
                 # Save the instance to the database
