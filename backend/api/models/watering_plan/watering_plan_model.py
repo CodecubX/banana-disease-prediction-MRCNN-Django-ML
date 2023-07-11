@@ -15,5 +15,8 @@ class WateringPlan(AbstractBananaPlant):
     watering_plan = models.CharField(choices=watering_plan_choices, max_length=200, null=False, blank=False)
     description = models.TextField()
 
+    class Meta:
+        unique_together = ('variety', 'stage', 'watering_plan')
+
     def __str__(self):
-        return f'{self.watering_plan}: {self.variety}'
+        return f'{self.watering_plan}: {self.variety} | {self.stage}'
