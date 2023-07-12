@@ -7,15 +7,15 @@ from .disease_model import Disease
 class DiseaseQuestionnairePrediction(models.Model):
     """ Holds Disease Questionnaire predictions data """
 
-    leaf_color = models.CharField(max_length=20)
-    leaf_spots = models.CharField(max_length=20)
-    leaf_wilting = models.CharField(max_length=10)
-    leaf_curling = models.CharField(max_length=10)
-    stunted_growth = models.CharField(max_length=10)
-    stem_color = models.CharField(max_length=20)
-    root_rot = models.CharField(max_length=10)
-    abnormal_fruiting = models.CharField(max_length=10)
-    presence_of_pests = models.CharField(max_length=10)
+    leaf_color = models.CharField(max_length=100)
+    leaf_spots = models.CharField(max_length=100)
+    leaf_wilting = models.CharField(max_length=100)
+    leaf_curling = models.CharField(max_length=100)
+    stunted_growth = models.CharField(max_length=100)
+    stem_color = models.CharField(max_length=100)
+    root_rot = models.CharField(max_length=100)
+    abnormal_fruiting = models.CharField(max_length=100)
+    presence_of_pests = models.CharField(max_length=100)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
     # fields for prediction fields
