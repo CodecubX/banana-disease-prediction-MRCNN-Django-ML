@@ -14,7 +14,8 @@ def filter_and_calculate_area(predictions):
     filtered_data = {}
 
     for class_name, objects in predictions.items():
-        filtered_objects = [obj for obj in objects if obj['area'] != 0]
+        filtered_objects = [obj for obj in objects]
+        # filtered_objects = [obj for obj in objects if obj['area'] != 0] # INITIAL IMPL
         if filtered_objects:
             filtered_data[class_name] = filtered_objects
 
