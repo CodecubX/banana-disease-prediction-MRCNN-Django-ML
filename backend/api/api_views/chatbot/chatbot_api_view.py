@@ -11,6 +11,19 @@ class ChatBotAPIView(APIView):
 
     permission_classes = [permissions.IsAuthenticated]
 
+    def get(self, request, *args, **kwargs):
+        """
+        Handles chat bot training
+        """
+        try:
+            language = request.query_params.get('language')
+            chatbot = ChatBot(language=language)
+            chatbot.train()
+        except Exception as e:
+            print(f'ERROR: {e}')
+            return Response({'error': 'Something went wrong while training'}, status=status.HTTP_200_OK)
+        return Response({'detail': 'Model training completed'}, status=status.HTTP_200_OK)
+
     def post(self, request, *args, **kwargs):
         """
         Handles the POST request for chatbot predictions.
@@ -26,7 +39,9 @@ class ChatBotAPIView(APIView):
         msg, tag_from_req, language = build_model_data(request.data, request.query_params)
 
         try:
-            model = ChatBot(language=language, mode='development')
+            model = ChatBot(language=language)
+            model.load_model_and_data()
+
         except Exception as e:
             print(f'ERROR: {e}')
             return Response({'error': 'Something went wrong with the chatbot'}, status=status.HTTP_409_CONFLICT)
