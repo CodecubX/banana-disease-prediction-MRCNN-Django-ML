@@ -89,6 +89,7 @@ def handle_chatbot_response(tag_from_req, msg, model, context, language='en'):
             )
             context['diseases'] = serializer.data
     else:
+        diseases = []
         if language == 'en':
             disease_data = Disease.objects.values('name', 'symptom_description')
             df = pd.DataFrame.from_records(disease_data)
@@ -96,6 +97,31 @@ def handle_chatbot_response(tag_from_req, msg, model, context, language='en'):
             df = df.rename(columns={'name': 'Disease/Pest', 'symptom_description': 'Description'})
 
             predicted_diseases = symptom_based.find_top_k_diseases(
+                symptoms=msg,
+                df=df,
+                k=3,
+                verbose=True
+            )
+            print(f'INFO: Predicted Diseases: {predicted_diseases}')
+
+            for disease in predicted_diseases:
+                disease_name = disease[0]
+                obj = Disease.objects.get(name=disease_name)
+                payload = {
+                    'id': obj.id,
+                    'name_display': obj.get_name_display(),
+                    'confidence': disease[1]
+                }
+                diseases.append(payload)
+
+        if language == 'si':
+            disease_data = Disease.objects.values('name', 'symptom_description_sinhala')
+            df = pd.DataFrame.from_records(disease_data)
+            # ! TODO make columns dynamic
+            df = df.rename(columns={'name': 'Disease/Pest', 'symptom_description_sinhala': 'Description'})
+
+            predicted_diseases = symptom_based.find_top_k_diseases(
+                language='si',
                 symptoms=msg,
                 df=df,
                 k=3,
@@ -115,6 +141,6 @@ def handle_chatbot_response(tag_from_req, msg, model, context, language='en'):
                 }
                 diseases.append(payload)
 
-            context['diseases'] = diseases
-            context['response'] = 'Those are the diseases that fits the description'
+        context['diseases'] = diseases
+        context['response'] = 'Those are the diseases that fits the description'
     return context
