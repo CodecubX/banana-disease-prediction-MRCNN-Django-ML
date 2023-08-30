@@ -67,7 +67,9 @@ def handle_chatbot_response(tag_from_req, msg, model, context, language='en'):
         intent_predictions = model.predict_intent(msg)
 
         tag = intent_predictions[0]
+
         response = model.generate_response(tag)
+        print(f'INFO: Predicted intent: {tag}\n\t Response: {response}')
 
         if language == 'si':
             # encode the Sinhala text using UTF-8 encoding

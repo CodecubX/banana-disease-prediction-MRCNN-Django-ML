@@ -425,7 +425,11 @@
         "Can you guide me on recognizing diseases based on their symptomatic presentations?",
         "What are the clues to identify diseases through symptom observation?"
       ],
-      "responses": []
+      "responses": [
+        "Can you explain the symptoms?",
+        "Explain the symptoms, please",
+        "Tell more about the symptoms"
+      ]
     },
     {
       "tag": "noanswer",
