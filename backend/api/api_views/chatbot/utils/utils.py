@@ -64,10 +64,10 @@ def handle_chatbot_response(tag_from_req, msg, model, context, language='en'):
         dict: The updated context dictionary.
     """
     if tag_from_req != 'identify_diseases_by_symptoms':
-        intent_predictions = model.get_predictions(msg)
+        intent_predictions = model.predict_intent(msg)
 
-        tag = intent_predictions[0]['intent']
-        response = model.get_response(tag)
+        tag = intent_predictions[0]
+        response = model.generate_response(tag)
 
         if language == 'si':
             # encode the Sinhala text using UTF-8 encoding
