@@ -12,7 +12,7 @@ class DiseasePrediction(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
     # fields for prediction fields
-    disease = models.ForeignKey(Disease, on_delete=models.DO_NOTHING, null=False, blank=False)
+    disease = models.ForeignKey(Disease, on_delete=models.CASCADE, null=False, blank=False)
     probabilities = models.JSONField(null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
