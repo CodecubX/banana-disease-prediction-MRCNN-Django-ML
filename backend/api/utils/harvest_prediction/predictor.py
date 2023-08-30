@@ -72,8 +72,8 @@ def get_harvest_prediction(data, classifier=CLASSIFIER_PATH,
         'Fertilizer type': ['Non Organic', 'None', 'Organic', 'Both used'],
         'Soil pH': (1, 14),
         'Amount of sunlight received': ['Low', 'Moderate', 'High'],
-        'Watering schedule': ['randomly', 'Daily', 'none', 'twice a week', '3 times a week'],
-        'Plant generation': ['1', '2', '4', '3', 'more than 5', '5']
+        'Watering schedule': ['none', 'randomly', 'twice a week', '3 times a week', 'Daily'],
+        'Plant generation': ['1', '2', '4', '3', '5', 'more than 5']
     }
 
     # Validate values for each key in data

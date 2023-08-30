@@ -1,0 +1,272 @@
+Plant ID,Variety,Agro-climatic region,"Plant density(Min=1,Max=5)",Spacing between plants (m),Plant generation,"Pesticides used(Yes, No)",Fertilizer type,Soil pH,Amount of sunlight received,Watering schedule,Number of leaves,Height (m),Yield per plant (kg)
+0,Pisang Awak Banana,Dry Zone,more than 5,0.47,5,No,Organic,6.26,Moderate,randomly,11,3.2,16.1
+1,Anamalu Banana,Intermediate Zone,2,3.3,1,No,None,6.9,High,randomly,9,4.0,12.0
+2,Amban Banana,Wet Zone,5,0.65,more than 5,No,Both used,5.97,High,none,15,4.7,43.6
+3,Anamalu Banana,Dry Zone,2,2.92,1,No,None,6.69,Moderate,Daily,8,4.2,12.1
+4,Mysore Banana,Intermediate Zone,1,4.44,1,No,None,6.76,High,Daily,9,3.3,13.2
+5,Anamalu Banana,Dry Zone,4,1.68,3,No,Both used,6.01,High,Daily,16,3.4,34.4
+6,Mysore Banana,Dry Zone,2,3.17,1,No,None,6.9,High,twice a week,8,3.7,11.5
+7,Amban Banana,Intermediate Zone,5,0.23,5,No,Non Organic,5.94,High,3 times a week,14,4.2,28.5
+8,Anamalu Banana,Intermediate Zone,3,1.93,2,No,Organic,6.34,High,Daily,12,4.3,19.7
+9,Anamalu Banana,Intermediate Zone,4,1.37,4,No,Non Organic,6.05,Low,3 times a week,13,3.1,23.2
+10,Amban Banana,Dry Zone,1,3.5,1,No,Non Organic,6.18,Moderate,twice a week,13,4.2,35.7
+11,Pisang Awak Banana,Intermediate Zone,4,2.03,4,No,None,6.64,Moderate,3 times a week,7,2.6,6.0
+12,Mysore Banana,Intermediate Zone,3,1.46,3,No,None,6.87,High,randomly,8,3.1,8.5
+13,Amban Banana,Dry Zone,2,3.86,1,No,Organic,6.13,High,Daily,12,4.7,24.5
+14,Anamalu Banana,Intermediate Zone,more than 5,0.14,5,No,Non Organic,6.02,High,none,14,3.9,19.9
+15,Pisang Awak Banana,Wet Zone,more than 5,0.18,more than 5,No,Non Organic,6.29,High,Daily,15,3.1,26.7
+16,Anamalu Banana,Wet Zone,4,1.36,3,No,Both used,6.22,Moderate,Daily,15,3.8,27.1
+17,Mysore Banana,Wet Zone,2,3.66,1,No,None,7.07,High,none,9,3.5,7.1
+18,Amban Banana,Intermediate Zone,more than 5,0.32,5,No,Both used,5.59,High,twice a week,16,4.5,43.3
+19,Anamalu Banana,Intermediate Zone,2,3.73,1,No,None,6.8,High,twice a week,8,3.7,11.5
+20,Pisang Awak Banana,Dry Zone,4,1.84,4,No,None,7.49,High,3 times a week,9,3.0,8.0
+21,Mysore Banana,Intermediate Zone,more than 5,0.89,5,No,None,6.82,High,Daily,9,3.2,7.5
+22,Mysore Banana,Intermediate Zone,more than 5,0.68,more than 5,No,Non Organic,5.63,Low,Daily,12,3.5,25.3
+23,Mysore Banana,Intermediate Zone,1,4.69,1,No,Both used,5.66,Moderate,none,14,3.8,31.5
+24,Pisang Awak Banana,Intermediate Zone,2,3.38,1,No,Both used,5.76,Moderate,randomly,14,3.2,36.8
+25,Anamalu Banana,Wet Zone,1,3.92,1,No,None,7.43,Moderate,twice a week,8,3.3,11.1
+26,Pisang Awak Banana,Wet Zone,3,2.47,2,No,Both used,6.27,High,none,15,2.7,32.6
+27,Mysore Banana,Intermediate Zone,more than 5,0.15,5,No,Both used,6.13,High,Daily,15,3.0,37.0
+28,Pisang Awak Banana,Dry Zone,1,3.6,1,No,Non Organic,6.32,Moderate,twice a week,13,3.7,27.9
+29,Mysore Banana,Intermediate Zone,4,1.98,4,No,Organic,6.06,High,none,12,4.3,16.5
+30,Silk Banana,Dry Zone,2,3.44,1,No,Both used,6.44,High,Daily,16,3.4,34.9
+31,Anamalu Banana,Intermediate Zone,2,3.84,1,No,None,7.22,High,3 times a week,9,4.7,12.9
+32,Mysore Banana,Dry Zone,more than 5,0.38,more than 5,No,None,6.69,High,randomly,8,3.5,6.2
+33,Silk Banana,Intermediate Zone,1,4.0,1,No,None,6.95,High,randomly,9,2.9,11.4
+34,Silk Banana,Intermediate Zone,4,1.12,4,No,Organic,6.41,High,randomly,11,2.6,16.6
+35,Anamalu Banana,Dry Zone,more than 5,0.55,5,No,Both used,5.82,High,Daily,16,3.8,33.6
+36,Pisang Awak Banana,Wet Zone,1,3.85,1,No,Both used,6.16,Moderate,Daily,14,3.7,38.1
+37,Mysore Banana,Wet Zone,4,2.09,3,No,Both used,6.28,High,3 times a week,16,3.3,36.6
+38,Pisang Awak Banana,Dry Zone,2,3.56,1,No,Organic,6.32,High,twice a week,11,3.4,23.8
+39,Amban Banana,Wet Zone,3,1.36,2,No,Non Organic,6.16,High,twice a week,15,3.8,33.3
+40,Amban Banana,Intermediate Zone,5,0.71,5,No,Both used,6.46,Moderate,twice a week,15,4.0,41.5
+41,Pisang Awak Banana,Wet Zone,5,0.28,more than 5,No,None,6.73,High,none,9,3.8,6.0
+42,Anamalu Banana,Wet Zone,2,3.32,1,No,Both used,6.16,High,randomly,16,3.6,34.9
+43,Pisang Awak Banana,Wet Zone,more than 5,0.87,5,No,None,6.73,Moderate,twice a week,8,3.0,5.0
+44,Pisang Awak Banana,Intermediate Zone,4,1.99,3,No,Non Organic,5.72,High,Daily,14,3.5,29.5
+45,Silk Banana,Intermediate Zone,1,3.13,1,No,None,7.0,High,none,8,2.7,6.4
+46,Silk Banana,Dry Zone,4,1.07,4,No,Organic,6.29,High,Daily,12,3.2,16.7
+47,Amban Banana,Wet Zone,more than 5,0.86,5,No,None,7.1,Moderate,Daily,7,4.7,2.5
+48,Silk Banana,Intermediate Zone,1,3.71,1,No,Both used,6.02,High,none,15,2.9,32.9
+49,Mysore Banana,Dry Zone,3,1.03,2,No,Both used,5.92,High,randomly,16,4.2,38.5
+50,Pisang Awak Banana,Wet Zone,3,1.73,2,No,Both used,5.67,High,none,16,3.4,33.4
+51,Anamalu Banana,Dry Zone,more than 5,0.51,5,No,Non Organic,6.3,High,3 times a week,15,3.7,24.5
+52,Anamalu Banana,Dry Zone,4,2.22,3,No,Both used,5.54,High,3 times a week,16,4.2,33.4
+53,Pisang Awak Banana,Intermediate Zone,1,3.78,1,No,Organic,6.47,Moderate,Daily,11,4.0,24.4
+54,Pisang Awak Banana,Dry Zone,1,3.45,1,No,Both used,6.36,Low,randomly,13,3.7,37.0
+55,Mysore Banana,Intermediate Zone,more than 5,0.65,more than 5,No,Organic,6.33,High,twice a week,12,3.7,17.0
+56,Anamalu Banana,Intermediate Zone,2,3.36,1,No,None,7.12,High,twice a week,9,4.6,12.2
+57,Mysore Banana,Dry Zone,more than 5,0.79,more than 5,No,Both used,5.99,Moderate,Daily,14,3.8,36.1
+58,Amban Banana,Intermediate Zone,2,2.57,1,No,Organic,6.06,Moderate,3 times a week,11,4.2,23.0
+59,Amban Banana,Wet Zone,2,3.06,1,No,Both used,5.76,High,twice a week,15,4.8,49.0
+60,Mysore Banana,Dry Zone,more than 5,0.57,more than 5,No,Non Organic,5.94,Moderate,Daily,13,3.1,26.4
+61,Silk Banana,Intermediate Zone,2,3.52,1,No,Organic,6.36,High,none,11,2.7,15.9
+62,Anamalu Banana,Intermediate Zone,more than 5,0.6,5,No,None,7.19,Moderate,randomly,7,4.4,5.0
+63,Anamalu Banana,Dry Zone,more than 5,0.26,more than 5,No,Both used,6.31,High,none,16,3.5,26.0
+64,Silk Banana,Dry Zone,4,2.45,3,No,Organic,6.08,Moderate,none,11,2.8,12.9
+65,Mysore Banana,Dry Zone,5,0.77,5,No,None,7.34,Low,twice a week,7,4.1,4.5
+66,Amban Banana,Wet Zone,1,3.13,1,No,Organic,6.38,High,none,12,4.2,22.5
+67,Silk Banana,Intermediate Zone,more than 5,0.47,more than 5,No,Non Organic,6.44,Moderate,none,14,3.3,18.7
+68,Silk Banana,Intermediate Zone,4,1.06,3,No,Organic,6.45,Moderate,none,11,3.0,13.2
+69,Anamalu Banana,Dry Zone,4,2.43,4,No,Both used,5.92,High,randomly,16,4.9,33.4
+70,Pisang Awak Banana,Wet Zone,1,3.32,1,No,None,7.35,High,randomly,8,2.9,15.0
+71,Mysore Banana,Intermediate Zone,2,3.65,1,No,Non Organic,5.97,High,3 times a week,15,3.5,35.0
+72,Pisang Awak Banana,Dry Zone,1,4.01,1,No,Non Organic,5.67,High,3 times a week,15,2.2,33.0
+73,Mysore Banana,Dry Zone,2,2.91,1,No,Both used,5.83,Moderate,none,14,3.9,34.9
+74,Amban Banana,Wet Zone,1,4.32,1,No,Non Organic,5.71,High,3 times a week,14,3.9,42.0
+75,Anamalu Banana,Wet Zone,5,0.5,more than 5,No,Non Organic,5.68,High,randomly,15,3.8,22.5
+76,Mysore Banana,Intermediate Zone,4,1.25,4,No,Organic,6.49,Moderate,twice a week,11,3.1,18.0
+77,Mysore Banana,Dry Zone,more than 5,0.17,5,No,Non Organic,5.54,Moderate,randomly,14,3.8,24.5
+78,Anamalu Banana,Wet Zone,more than 5,0.48,more than 5,No,None,7.33,Moderate,twice a week,8,3.5,5.3
+79,Mysore Banana,Intermediate Zone,4,1.95,3,No,Non Organic,6.33,High,3 times a week,15,4.2,30.5
+80,Anamalu Banana,Intermediate Zone,more than 5,0.27,more than 5,No,Both used,5.55,High,randomly,15,4.9,31.6
+81,Anamalu Banana,Dry Zone,5,0.85,5,No,Both used,6.22,Low,Daily,14,4.0,29.0
+82,Mysore Banana,Dry Zone,4,2.14,4,No,Both used,5.71,Low,none,14,3.3,30.6
+83,Amban Banana,Intermediate Zone,4,2.12,4,No,None,7.44,Moderate,randomly,8,4.1,5.5
+84,Amban Banana,Dry Zone,2,3.03,1,No,Non Organic,6.4,High,3 times a week,15,4.2,39.6
+85,Pisang Awak Banana,Wet Zone,3,2.26,3,No,Non Organic,5.87,High,3 times a week,15,3.9,30.1
+86,Silk Banana,Dry Zone,2,3.14,1,No,Non Organic,6.4,High,twice a week,14,2.8,28.3
+87,Silk Banana,Intermediate Zone,5,0.46,5,No,None,7.42,Moderate,Daily,8,3.2,4.0
+88,Pisang Awak Banana,Wet Zone,2,3.19,1,No,None,6.58,High,randomly,8,3.6,14.5
+89,Amban Banana,Wet Zone,2,3.89,1,No,Non Organic,6.06,High,twice a week,15,4.3,38.1
+90,Mysore Banana,Intermediate Zone,5,0.86,more than 5,No,None,6.52,High,Daily,9,3.3,7.9
+91,Silk Banana,Wet Zone,3,2.41,3,No,None,6.94,High,3 times a week,9,3.2,10.0
+92,Amban Banana,Wet Zone,3,2.12,2,No,Both used,5.56,Moderate,randomly,15,4.5,43.0
+93,Pisang Awak Banana,Wet Zone,4,2.06,4,No,Both used,5.63,High,twice a week,15,3.5,35.6
+94,Anamalu Banana,Intermediate Zone,3,1.11,3,No,Both used,5.65,High,randomly,15,3.3,32.9
+95,Mysore Banana,Dry Zone,more than 5,0.73,more than 5,No,Organic,6.07,Low,twice a week,9,4.0,11.0
+96,Anamalu Banana,Wet Zone,3,1.59,2,No,Both used,6.4,Moderate,3 times a week,15,5.0,33.0
+97,Anamalu Banana,Wet Zone,1,3.0,1,No,Organic,6.25,High,none,11,5.0,20.6
+98,Anamalu Banana,Dry Zone,4,2.43,3,No,None,7.38,High,none,8,3.5,2.0
+99,Anamalu Banana,Wet Zone,1,3.36,1,No,Both used,5.87,High,none,15,4.1,33.8
+100,Amban Banana,Intermediate Zone,2,2.57,1,No,Organic,6.33,High,randomly,11,4.3,24.5
+101,Amban Banana,Intermediate Zone,1,3.39,1,No,Non Organic,5.73,High,3 times a week,14,4.1,40.0
+102,Silk Banana,Dry Zone,2,2.91,1,No,Both used,5.73,Moderate,twice a week,15,2.9,32.7
+103,Mysore Banana,Intermediate Zone,3,1.45,2,No,Non Organic,6.02,Moderate,3 times a week,13,3.4,29.0
+104,Amban Banana,Dry Zone,2,2.59,1,No,Both used,6.5,High,3 times a week,15,4.3,48.0
+105,Silk Banana,Dry Zone,4,1.53,3,No,Both used,6.5,Low,Daily,14,2.6,31.4
+106,Mysore Banana,Dry Zone,more than 5,0.23,5,No,Organic,6.21,Moderate,Daily,10,4.2,15.0
+107,Silk Banana,Wet Zone,2,3.21,1,No,None,7.38,High,randomly,8,2.7,8.0
+108,Silk Banana,Dry Zone,3,2.16,3,No,Organic,6.08,High,twice a week,12,3.1,17.5
+109,Silk Banana,Intermediate Zone,1,4.04,1,No,Both used,6.34,Moderate,3 times a week,15,3.2,34.4
+110,Mysore Banana,Dry Zone,1,3.4,1,No,Both used,6.25,High,twice a week,16,3.4,41.7
+111,Pisang Awak Banana,Wet Zone,1,4.16,1,No,Both used,5.65,High,Daily,15,3.0,40.8
+112,Pisang Awak Banana,Dry Zone,2,3.25,1,No,Both used,5.9,High,none,15,3.8,35.0
+113,Mysore Banana,Dry Zone,5,0.37,more than 5,No,Both used,5.8,Moderate,3 times a week,14,3.6,35.0
+114,Silk Banana,Dry Zone,2,2.71,1,No,Non Organic,5.78,High,none,14,2.6,26.0
+115,Silk Banana,Intermediate Zone,3,2.16,3,No,Organic,6.15,High,3 times a week,12,3.2,17.5
+116,Amban Banana,Wet Zone,4,1.0,3,No,Both used,5.5,High,3 times a week,16,4.4,44.0
+117,Pisang Awak Banana,Intermediate Zone,4,1.5,3,No,Organic,6.06,High,randomly,11,3.7,18.3
+118,Anamalu Banana,Dry Zone,2,4.14,2,No,Both used,5.66,Moderate,none,14,4.2,29.0
+119,Silk Banana,Wet Zone,3,4.57,3,No,Organic,6.45,Moderate,twice a week,11,2.5,16.5
+120,Anamalu Banana,Wet Zone,2,2.94,1,No,None,6.82,Low,randomly,7,3.9,9.0
+121,Pisang Awak Banana,Intermediate Zone,3,2.4,3,No,Organic,6.37,Moderate,twice a week,10,3.6,18.0
+122,Anamalu Banana,Intermediate Zone,3,1.11,2,No,None,6.93,Moderate,twice a week,8,3.5,9.5
+123,Pisang Awak Banana,Intermediate Zone,1,4.5,1,No,Both used,6.48,Moderate,3 times a week,15,2.8,38.5
+124,Amban Banana,Dry Zone,4,1.29,4,No,Organic,6.25,High,randomly,12,4.2,18.9
+125,Pisang Awak Banana,Dry Zone,more than 5,0.81,5,No,None,6.81,Moderate,twice a week,8,3.7,9.0
+126,Amban Banana,Wet Zone,3,1.11,3,No,Non Organic,5.73,High,Daily,15,4.7,22.0
+127,Mysore Banana,Wet Zone,3,1.52,2,No,Non Organic,6.0,Moderate,3 times a week,13,4.0,30.9
+128,Mysore Banana,Wet Zone,more than 5,0.11,more than 5,No,Both used,5.53,Moderate,randomly,14,4.0,34.8
+129,Pisang Awak Banana,Intermediate Zone,2,3.54,1,No,Both used,6.27,Moderate,Daily,14,3.1,38.0
+130,Pisang Awak Banana,Wet Zone,3,1.48,2,No,Organic,6.5,High,randomly,12,3.6,23.5
+131,Silk Banana,Intermediate Zone,4,1.65,3,No,None,7.0,Moderate,randomly,8,3.6,5.0
+132,Silk Banana,Intermediate Zone,5,0.56,4,No,Organic,6.31,Low,twice a week,10,2.6,14.0
+133,Mysore Banana,Wet Zone,more than 5,0.54,more than 5,No,Organic,6.46,Moderate,none,10,3.0,11.4
+134,Pisang Awak Banana,Dry Zone,4,2.08,4,No,Organic,6.07,High,Daily,12,2.4,19.0
+135,Amban Banana,Wet Zone,1,4.46,1,No,None,7.23,Moderate,randomly,7,3.9,11.0
+136,Pisang Awak Banana,Dry Zone,1,4.52,1,No,Organic,6.37,Moderate,randomly,10,2.4,23.8
+137,Silk Banana,Dry Zone,4,1.65,3,No,Non Organic,5.82,Moderate,randomly,14,3.6,24.0
+138,Amban Banana,Intermediate Zone,2,3.24,1,No,Both used,6.32,Low,randomly,13,4.7,47.5
+139,Anamalu Banana,Wet Zone,more than 5,0.85,5,No,None,7.47,High,none,8,3.8,5.0
+140,Amban Banana,Intermediate Zone,4,1.87,4,No,Both used,5.66,High,none,15,4.8,41.0
+141,Amban Banana,Wet Zone,4,1.26,3,No,Both used,5.78,Moderate,Daily,15,4.4,44.8
+142,Amban Banana,Dry Zone,more than 5,0.54,more than 5,No,Non Organic,5.93,High,Daily,14,4.1,26.3
+143,Anamalu Banana,Wet Zone,5,0.46,4,No,Non Organic,5.7,Moderate,twice a week,13,3.7,22.9
+144,Pisang Awak Banana,Dry Zone,2,3.67,1,No,None,7.48,High,twice a week,9,3.7,12.0
+145,Pisang Awak Banana,Intermediate Zone,2,3.62,1,No,Non Organic,6.48,High,none,14,2.7,27.0
+146,Silk Banana,Wet Zone,3,2.07,3,No,None,7.11,Moderate,twice a week,7,3.4,5.5
+147,Anamalu Banana,Dry Zone,more than 5,0.47,more than 5,No,Non Organic,6.4,Moderate,Daily,13,3.1,21.5
+148,Amban Banana,Dry Zone,2,3.78,1,No,Non Organic,6.13,Moderate,none,13,4.5,32.5
+149,Amban Banana,Wet Zone,2,3.72,1,No,Both used,5.85,Moderate,none,14,4.5,43.8
+150,Anamalu Banana,Wet Zone,2,2.95,1,No,Both used,6.48,High,randomly,16,3.7,35.0
+151,Amban Banana,Intermediate Zone,more than 5,0.65,more than 5,No,Both used,5.86,Moderate,Daily,15,4.3,42.4
+152,Silk Banana,Wet Zone,5,0.1,5,No,Non Organic,5.5,High,3 times a week,15,3.3,23.5
+153,Amban Banana,Intermediate Zone,5,0.24,more than 5,No,Both used,5.94,High,randomly,15,4.3,41.5
+154,Amban Banana,Dry Zone,more than 5,0.66,5,No,None,7.32,High,randomly,9,4.1,2.0
+155,Anamalu Banana,Dry Zone,3,1.04,2,No,Both used,5.62,High,none,15,4.8,30.0
+156,Silk Banana,Intermediate Zone,more than 5,0.75,more than 5,No,Organic,6.36,High,twice a week,11,2.8,14.9
+157,Silk Banana,Dry Zone,2,3.39,1,No,None,7.19,Low,twice a week,7,2.4,7.1
+158,Pisang Awak Banana,Intermediate Zone,4,1.55,3,No,Both used,6.19,Low,Daily,14,2.3,36.0
+159,Anamalu Banana,Wet Zone,2,2.69,1,No,Organic,6.08,Moderate,randomly,11,3.9,21.0
+160,Mysore Banana,Dry Zone,5,0.89,5,No,Organic,6.07,High,3 times a week,12,3.1,18.0
+161,Silk Banana,Intermediate Zone,1,3.76,1,No,None,7.4,High,3 times a week,8,2.6,10.0
+162,Amban Banana,Wet Zone,more than 5,0.88,5,No,Organic,6.39,High,3 times a week,11,4.2,16.7
+163,Mysore Banana,Dry Zone,1,4.28,1,No,Organic,6.42,High,randomly,11,3.5,24.5
+164,Amban Banana,Dry Zone,5,0.49,more than 5,No,Organic,6.1,Moderate,none,10,4.6,11.6
+165,Silk Banana,Wet Zone,1,3.73,1,No,Organic,6.23,High,3 times a week,11,2.5,25.6
+166,Mysore Banana,Wet Zone,4,2.34,3,No,Organic,6.05,High,Daily,11,4.0,18.9
+167,Anamalu Banana,Wet Zone,2,2.95,1,No,Non Organic,5.85,High,3 times a week,15,3.9,28.4
+168,Silk Banana,Intermediate Zone,5,0.38,5,No,None,6.83,Moderate,Daily,8,2.8,5.0
+169,Mysore Banana,Dry Zone,more than 5,0.37,more than 5,No,Non Organic,5.69,High,none,14,4.2,22.5
+170,Silk Banana,Dry Zone,1,3.28,1,No,Organic,6.45,High,randomly,11,3.1,19.5
+171,Amban Banana,Wet Zone,5,0.83,4,No,Non Organic,5.79,High,3 times a week,15,4.4,31.0
+172,Mysore Banana,Wet Zone,3,1.23,2,No,None,6.61,High,twice a week,9,2.9,9.5
+173,Silk Banana,Intermediate Zone,1,4.49,1,No,None,6.8,High,randomly,8,2.4,10.9
+174,Silk Banana,Intermediate Zone,3,1.34,3,No,Non Organic,6.01,High,Daily,15,2.7,25.8
+175,Pisang Awak Banana,Intermediate Zone,2,3.37,1,No,None,6.7,High,none,9,4.0,8.5
+176,Anamalu Banana,Wet Zone,more than 5,0.5,more than 5,No,None,6.52,Low,Daily,7,4.3,5.0
+177,Amban Banana,Dry Zone,3,2.28,3,No,Organic,6.02,High,randomly,11,3.9,20.0
+178,Silk Banana,Dry Zone,2,3.17,1,No,Organic,6.1,High,Daily,12,3.3,19.5
+179,Mysore Banana,Wet Zone,5,0.11,4,No,Non Organic,6.45,High,Daily,15,3.1,28.5
+180,Anamalu Banana,Intermediate Zone,4,1.98,4,No,Non Organic,6.38,High,none,14,3.3,21.0
+181,Pisang Awak Banana,Intermediate Zone,1,3.53,1,No,Organic,6.04,Moderate,Daily,11,2.1,26.0
+182,Anamalu Banana,Dry Zone,4,1.16,3,No,Both used,5.54,High,randomly,16,3.9,32.6
+183,Silk Banana,Wet Zone,1,3.06,1,No,Both used,6.31,Low,twice a week,13,3.6,34.0
+184,Mysore Banana,Wet Zone,4,2.33,3,No,None,7.07,High,Daily,8,3.0,9.9
+185,Anamalu Banana,Wet Zone,more than 5,0.54,5,No,None,7.31,High,twice a week,9,3.6,7.0
+186,Mysore Banana,Dry Zone,3,1.32,3,No,Both used,5.83,Moderate,randomly,15,3.5,38.5
+187,Mysore Banana,Wet Zone,1,3.2,1,No,Organic,6.46,Moderate,Daily,10,3.4,25.0
+188,Mysore Banana,Intermediate Zone,more than 5,0.42,more than 5,No,Non Organic,5.97,High,3 times a week,15,4.1,26.4
+189,Silk Banana,Dry Zone,3,1.88,3,No,Non Organic,6.07,High,3 times a week,15,3.3,26.8
+190,Anamalu Banana,Intermediate Zone,3,2.3,2,No,Organic,6.4,Low,randomly,10,3.5,18.0
+191,Pisang Awak Banana,Dry Zone,1,4.23,1,No,None,7.03,Moderate,none,8,3.3,6.5
+192,Mysore Banana,Wet Zone,more than 5,0.67,more than 5,No,None,7.02,Moderate,none,8,3.7,2.0
+193,Mysore Banana,Intermediate Zone,3,1.57,3,No,Both used,6.05,Moderate,twice a week,14,4.1,37.5
+194,Anamalu Banana,Intermediate Zone,3,1.25,3,No,Organic,6.12,Moderate,Daily,11,3.8,19.0
+195,Anamalu Banana,Intermediate Zone,4,1.62,4,No,Non Organic,6.05,High,twice a week,14,4.5,25.0
+196,Amban Banana,Wet Zone,more than 5,0.86,more than 5,No,Both used,6.16,Moderate,randomly,15,4.6,42.0
+197,Amban Banana,Intermediate Zone,1,4.41,1,No,None,6.66,Moderate,none,7,4.2,8.3
+198,Anamalu Banana,Dry Zone,4,1.26,3,No,Non Organic,5.68,Moderate,Daily,14,3.8,25.7
+199,Amban Banana,Wet Zone,1,3.12,1,No,None,6.67,Moderate,twice a week,8,4.3,12.9
+200,Pisang Awak Banana,Wet Zone,4,2.14,3,No,Organic,6.12,Moderate,3 times a week,11,2.5,19.5
+201,Silk Banana,Wet Zone,4,2.32,4,No,Non Organic,6.47,High,twice a week,15,3.6,25.0
+202,Mysore Banana,Intermediate Zone,5,0.8,5,No,None,7.37,High,randomly,8,3.8,7.0
+203,Amban Banana,Dry Zone,3,1.74,2,No,Non Organic,5.6,High,3 times a week,14,4.7,33.4
+204,Anamalu Banana,Wet Zone,2,3.88,1,No,Both used,6.3,High,3 times a week,15,4.5,36.0
+205,Pisang Awak Banana,Wet Zone,3,1.03,2,No,Non Organic,6.31,High,none,14,3.4,26.5
+206,Anamalu Banana,Wet Zone,1,4.54,1,No,None,6.52,Moderate,none,7,3.6,9.0
+207,Mysore Banana,Dry Zone,1,3.57,1,No,None,6.94,High,Daily,8,3.7,14.5
+208,Silk Banana,Intermediate Zone,4,1.22,4,No,None,7.03,High,randomly,8,2.8,5.0
+209,Amban Banana,Wet Zone,4,1.49,4,No,Non Organic,5.77,Low,randomly,13,4.7,30.0
+210,Anamalu Banana,Intermediate Zone,2,3.66,1,No,Non Organic,5.86,Moderate,Daily,14,4.4,29.5
+211,Amban Banana,Wet Zone,5,0.56,5,No,Both used,6.32,Moderate,twice a week,15,4.4,43.6
+212,Mysore Banana,Dry Zone,4,1.28,3,No,Non Organic,6.13,High,Daily,14,3.7,30.7
+213,Pisang Awak Banana,Wet Zone,2,2.82,1,No,Organic,6.41,High,Daily,12,2.1,25.5
+214,Mysore Banana,Wet Zone,more than 5,0.53,more than 5,No,Organic,6.15,High,3 times a week,11,3.6,17.0
+215,Mysore Banana,Dry Zone,1,4.58,1,No,Both used,5.63,High,none,15,3.1,38.0
+216,Pisang Awak Banana,Wet Zone,3,1.85,3,No,Non Organic,6.43,Moderate,3 times a week,14,2.0,30.5
+217,Mysore Banana,Intermediate Zone,3,1.24,3,No,None,7.04,High,none,8,3.0,6.5
+218,Amban Banana,Intermediate Zone,1,3.7,1,No,Organic,6.19,High,randomly,11,4.3,26.0
+219,Pisang Awak Banana,Wet Zone,2,3.35,1,No,None,6.88,Moderate,randomly,7,2.2,10.5
+220,Mysore Banana,Intermediate Zone,2,2.76,1,No,Non Organic,5.53,High,none,14,3.1,30.0
+221,Anamalu Banana,Dry Zone,2,3.72,1,No,Both used,6.4,High,Daily,16,4.3,38.0
+222,Mysore Banana,Intermediate Zone,5,0.6,5,No,Organic,6.32,High,twice a week,11,3.1,19.5
+223,Silk Banana,Wet Zone,1,3.71,1,No,Non Organic,5.77,Moderate,twice a week,13,3.2,30.5
+224,Amban Banana,Dry Zone,2,3.95,1,No,Non Organic,5.65,High,twice a week,15,4.5,38.5
+225,Silk Banana,Dry Zone,1,4.9,1,No,Organic,6.24,Moderate,none,11,3.4,18.0
+226,Mysore Banana,Intermediate Zone,3,1.35,3,No,Organic,6.18,High,Daily,11,4.3,18.2
+227,Silk Banana,Wet Zone,1,3.44,1,No,Both used,6.05,High,none,15,3.3,34.0
+228,Silk Banana,Wet Zone,more than 5,0.85,more than 5,No,Both used,5.6,High,twice a week,15,3.2,31.5
+229,Silk Banana,Dry Zone,3,2.08,2,No,None,6.95,High,twice a week,8,2.9,7.0
+230,Amban Banana,Dry Zone,4,1.05,4,No,None,6.84,High,randomly,9,4.5,7.0
+231,Anamalu Banana,Dry Zone,2,2.76,1,No,Both used,5.54,High,randomly,16,3.9,36.0
+232,Silk Banana,Dry Zone,more than 5,0.64,more than 5,No,Both used,6.1,Low,Daily,13,3.2,30.5
+233,Anamalu Banana,Wet Zone,4,2.48,4,No,Organic,6.08,High,3 times a week,12,4.1,20.0
+234,Amban Banana,Dry Zone,more than 5,0.9,5,No,None,6.84,High,none,8,4.7,1.0
+235,Silk Banana,Dry Zone,2,2.89,1,No,Both used,5.53,High,none,15,2.5,32.5
+236,Anamalu Banana,Wet Zone,2,3.66,1,No,Organic,6.42,High,randomly,11,4.0,21.5
+237,Anamalu Banana,Intermediate Zone,2,3.64,1,No,Organic,6.12,Low,randomly,9,3.5,19.5
+238,Pisang Awak Banana,Wet Zone,2,3.35,1,No,Non Organic,6.14,High,twice a week,14,3.9,32.0
+239,Anamalu Banana,Dry Zone,4,1.53,4,No,Non Organic,6.23,Moderate,randomly,14,3.5,25.0
+240,Pisang Awak Banana,Wet Zone,4,2.05,4,No,None,6.5,High,3 times a week,9,2.7,11.0
+241,Amban Banana,Dry Zone,1,4.8,1,No,None,6.58,High,twice a week,8,4.5,16.5
+242,Amban Banana,Dry Zone,3,1.95,3,No,Non Organic,6.41,Moderate,3 times a week,13,3.9,33.5
+243,Amban Banana,Dry Zone,3,2.43,3,No,None,7.18,High,Daily,9,4.7,10.0
+244,Mysore Banana,Dry Zone,more than 5,0.16,5,No,Both used,5.65,High,twice a week,15,3.8,35.5
+245,Mysore Banana,Dry Zone,1,4.2,1,No,None,6.56,Moderate,twice a week,8,4.1,16.5
+246,Anamalu Banana,Wet Zone,more than 5,0.87,5,No,Organic,6.19,Moderate,3 times a week,11,3.8,17.0
+247,Mysore Banana,Dry Zone,5,0.74,4,No,Both used,5.9,High,3 times a week,15,3.2,38.5
+248,Mysore Banana,Intermediate Zone,1,3.73,1,No,Organic,6.45,Moderate,Daily,11,4.2,27.5
+249,Amban Banana,Intermediate Zone,4,2.17,3,No,None,7.14,Moderate,twice a week,8,3.9,6.5
+250,Anamalu Banana,Dry Zone,1,3.76,1,No,None,7.45,High,none,8,4.5,8.0
+251,Silk Banana,Dry Zone,5,0.14,5,No,Both used,6.24,High,none,16,3.0,25.0
+252,Mysore Banana,Wet Zone,5,0.57,5,No,None,6.87,Moderate,randomly,8,4.0,6.5
+253,Anamalu Banana,Wet Zone,2,3.04,1,No,Organic,6.2,Moderate,twice a week,10,4.0,21.0
+254,Mysore Banana,Intermediate Zone,2,3.7,1,No,None,7.38,Moderate,randomly,7,3.7,13.5
+255,Silk Banana,Wet Zone,4,1.68,4,No,None,6.89,Moderate,Daily,8,2.9,6.5
+256,Anamalu Banana,Dry Zone,1,3.4,1,No,Organic,6.46,High,Daily,12,4.1,24.5
+257,Anamalu Banana,Intermediate Zone,3,1.58,2,No,Non Organic,5.78,High,twice a week,14,3.5,27.0
+258,Mysore Banana,Wet Zone,3,1.4,3,No,Both used,5.57,Moderate,twice a week,15,3.8,39.0
+259,Silk Banana,Dry Zone,3,2.15,2,No,Organic,6.03,High,none,12,2.8,13.5
+260,Mysore Banana,Wet Zone,more than 5,0.56,more than 5,No,Both used,6.24,High,none,16,3.1,34.0
+261,Pisang Awak Banana,Intermediate Zone,1,4.64,1,No,Non Organic,6.49,Moderate,Daily,13,2.7,33.5
+262,Anamalu Banana,Wet Zone,1,4.18,1,No,Both used,5.59,High,twice a week,15,4.0,37.5
+263,Silk Banana,Intermediate Zone,more than 5,0.28,5,No,Organic,6.42,Moderate,3 times a week,11,2.4,16.5
+264,Silk Banana,Wet Zone,1,4.08,1,No,Organic,6.06,Moderate,Daily,10,2.6,21.5
+265,Pisang Awak Banana,Dry Zone,more than 5,0.23,5,No,None,7.1,Moderate,Daily,8,2.1,9.0
+266,Pisang Awak Banana,Dry Zone,3,2.47,3,No,Non Organic,5.64,Moderate,twice a week,13,2.7,29.0
+267,Amban Banana,Dry Zone,4,2.35,3,No,Organic,6.3,High,Daily,11,4.4,21.0
+268,Amban Banana,Intermediate Zone,4,1.16,3,No,Non Organic,6.01,High,Daily,14,4.6,33.7
+269,Mysore Banana,Intermediate Zone,1,3.56,1,No,Non Organic,5.9,High,Daily,15,3.5,38.5
+270,Amban Banana,Intermediate Zone,1,3.69,1,No,Non Organic,6.01,Moderate,randomly,14,4.0,40.0
