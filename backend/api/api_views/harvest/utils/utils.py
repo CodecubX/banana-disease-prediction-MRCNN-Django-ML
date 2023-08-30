@@ -15,7 +15,7 @@ def build_model_data(data):
     plant_density = data.get('plant_density')
     spacing_between_plants = data.get('spacing_between_plants')
     pesticides_used = data.get('pesticides_used')
-    plant_generation = data.get('plant_generation')
+    plant_generation = data.get('plant_generation').lower()
     fertilizer_type = data.get('fertilizer_type')
     soil_ph = data.get('soil_ph')
     amount_of_sunlight = data.get('amount_of_sunlight')
