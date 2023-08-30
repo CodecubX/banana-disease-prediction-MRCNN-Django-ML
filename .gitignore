@@ -11,3 +11,4 @@ disease_detection_mrcnn/mrcnn/__pycache__/
 /water_and_fertilizer plan/saved_models/soil_type_identification_model.h5
 /water_and_fertilizer plan/saved_models/soil_type_identification_resnet_model.h5
 /water_and_fertilizer plan/saved_models/soil_type_identification_model/
+__pycache__

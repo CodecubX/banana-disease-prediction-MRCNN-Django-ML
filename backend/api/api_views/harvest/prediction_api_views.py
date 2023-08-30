@@ -35,7 +35,7 @@ class HarvestPredictionAPIView(APIView):
         """
         # Extract the age in days and variety from the URL params
         variety_id = request.GET.get('variety')
-        age_in_days = int(request.GET.get('age'))
+        date = request.GET.get('age')
 
         try:
             variety_obj = Variety.objects.get(id=variety_id)
@@ -45,7 +45,7 @@ class HarvestPredictionAPIView(APIView):
             return Response({'error': 'Variety not found'}, status=status.HTTP_404_NOT_FOUND)
 
         # Calculate the estimated harvesting time
-        estimated_time = calculate_harvesting_time(average_harvesting_time, age_in_days)
+        estimated_time = calculate_harvesting_time(average_harvesting_time, date)
 
         # Return the estimated harvesting time as a response
         response_data = {
