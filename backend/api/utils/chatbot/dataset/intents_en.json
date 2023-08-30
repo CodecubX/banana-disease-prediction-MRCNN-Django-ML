@@ -362,7 +362,7 @@
       ]
     },
     {
-      "tag": "Identify_diseases_by_symptoms",
+      "tag": "identify_diseases_by_symptoms",
       "patterns": [
         "Identify diseases",
         "Can you identify banana diseases",
@@ -425,12 +425,7 @@
         "Can you guide me on recognizing diseases based on their symptomatic presentations?",
         "What are the clues to identify diseases through symptom observation?"
       ],
-      "responses": [
-        "Observe leaf spots, wilting, yellowing/browning leaves, lesions, fruit discoloration, stunted growth, abnormal fruit shape, and signs of pests/fungal growth. Consult an agricultural expert for accurate diagnosis.",
-        "Look for leaf spots, necrosis, yellowing/chlorosis, abnormal growth patterns, premature fruit drop, decayed fruits, and signs of pests/insect damage. Seek guidance from local agricultural services or a plant pathologist.",
-        "Check for yellowing/browning leaves, lesions/spots on leaves/fruits, rotting/discoloration of fruits, wilting, stunted growth, and unusual odor/discharge. Consult a horticulturist or plant disease specialist.",
-        "Observe leaf discoloration, necrosis, wilting, abnormal growth, fruit malformation/decay, signs of pest infestation. Consider environmental factors and cultural practices. Seek assistance from agricultural authorities or a plant pathologist for diagnosis and management."
-      ]
+      "responses": []
     },
     {
       "tag": "noanswer",
