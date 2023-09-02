@@ -6,13 +6,15 @@ class Disease(models.Model):
 
     # need to add the class labels the mrcnn model trained for (except bg class)
     name_choices = [
-        ('healthy', 'Healthy'),
-        ('yellow_leaf', 'Yellow Leaf'),
-        ('anthracnose', 'Anthracnose'),
+        ('Healthy', 'Healthy'),
+        ('Yellow Sigatoka', 'Yellow Sigatoka'),
+        ('Black Sigatoka', 'Black Sigatoka'),
+        ('Panama', 'Panama'),
+        ('Yellow Leaf', 'Yellow Leaf'),
+        ('Anthracnose', 'Anthracnose'),
         ('Banana Bunchy Top', 'Banana Bunchy Top'),
         ('Fusarium Wilt', 'Fusarium Wilt'),
         ('Nutrient Deficiency', 'Nutrient Deficiency'),
-        ('Black Sigatoka', 'Black Sigatoka'),
         ('Nitrogen Deficiency', 'Nitrogen Deficiency'),
         ('Banana Mosaic', 'Banana Mosaic'),
         ('Magnesium Deficiency', 'Magnesium Deficiency'),
