@@ -19,15 +19,15 @@ set_session(session)
 # Define the configuration for the model
 class ModelConfig(Config):
     NAME = "banana_diseases_coco"
-    # number of classes (background + class 1 + class 2)
-    NUM_CLASSES = 1 + 3
+    # number of classes (background + number of disease categories)
+    NUM_CLASSES = 1 + 4
     # number of training steps per epoch !TEST THIS
     STEPS_PER_EPOCH = 1
     USE_MINI_MASK = False
     GPU_COUNT = 1
     IMAGES_PER_GPU = 1
-    DETECTION_MIN_CONFIDENCE = 0.8 # Skip detections with < 80% confidence
-    CLASS_NAMES = ['BG', 'healthy', 'yellow_leaf', 'anthracnose']
+    DETECTION_MIN_CONFIDENCE = 0.6 # Skip detections with < 80% confidence
+    CLASS_NAMES = ['BG', 'Black Sigatoka', 'Healthy', 'Yellow Sigatoka', 'Panama']
 
 
 class MaskRCNNModel:

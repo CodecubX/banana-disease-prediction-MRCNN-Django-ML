@@ -33,4 +33,5 @@ def filter_and_calculate_area(predictions):
     # Sort the result dictionary based on total area in descending order
     sorted_arr = sorted(sorted_arr, key=lambda x: x['total_area'], reverse=True)
 
-    return sorted_arr
+    # get best 3
+    return sorted_arr[:3]

@@ -79,7 +79,7 @@ class BananaDiseaseMRCNNAPIView(APIView):
 
         try:
             # get predictions
-            predictions = model.predict(os.path.join(settings.MEDIA_ROOT, destination_path))
+            predictions = model.predict(os.path.join(settings.MEDIA_ROOT, destination_path), verbose=True)
         except Exception as e:
             print(f'INFO: {e}')
             return Response({'error': 'Something went wrong while detecting'}, status=status.HTTP_409_CONFLICT)
