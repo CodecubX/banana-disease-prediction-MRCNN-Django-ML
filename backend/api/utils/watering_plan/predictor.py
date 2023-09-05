@@ -99,6 +99,7 @@ def predict_soil_type(img_path, model_path=SOIL_TYPE_MODEL_PATH):
     loaded_model = load_model(model_path)
     processed_img = get_processed_input_img(img_path)
     pred = loaded_model.predict(processed_img)
+
     # inversely sorted array with indexes
     best_idx = (-pred).argsort()[0]
     # convert them to text

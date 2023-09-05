@@ -6,3 +6,5 @@ class Test(models.Model):
 
     test = models.TextField()
 
+    def __str__(self):
+        return self.test
