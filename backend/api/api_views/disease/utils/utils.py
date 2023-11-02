@@ -33,5 +33,9 @@ def filter_and_calculate_area(predictions):
     # Sort the result dictionary based on total area in descending order
     sorted_arr = sorted(sorted_arr, key=lambda x: x['total_area'], reverse=True)
 
+    # Check if 'Healthy' is in the first element and move it to the second position
+    if sorted_arr and sorted_arr[0]['disease_name'] == 'Healthy':
+        sorted_arr.insert(1, sorted_arr.pop(0))
+
     # get best 3
     return sorted_arr[:3]
